@@ -39,7 +39,7 @@ publishing {
             from(components["java"])
             groupId = "io.github.easy-utils"
             artifactId = "agent-sdk-kotlin"
-            version = "0.13.0"
+            version = "0.13.1"
         }
     }
     repositories {
