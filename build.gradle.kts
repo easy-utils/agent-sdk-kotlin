@@ -5,7 +5,16 @@ plugins {
 group = "agentsdk"
 version = "0.1.0"
 
-repositories { mavenCentral() }
+repositories {
+    mavenCentral()
+    maven {
+        url = uri("https://maven.pkg.github.com/easy-utils/easy-rpc-kotlin")
+        credentials {
+            username = System.getenv("GITHUB_ACTOR") ?: ""
+            password = System.getenv("GITHUB_TOKEN") ?: ""
+        }
+    }
+}
 
 dependencies {
     api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
@@ -13,7 +22,7 @@ dependencies {
     implementation("com.google.protobuf:protobuf-javalite:4.34.0")
     implementation("com.google.protobuf:protobuf-kotlin-lite:4.34.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
-    implementation(files("/home/user/easy-utils/easy-rpc-kotlin/build/libs/easy-rpc-kotlin-0.1.0.jar"))
+    implementation("io.github.easy-utils:easy-rpc-kotlin:0.2.0")
 }
 
 kotlin { jvmToolchain(17) }
