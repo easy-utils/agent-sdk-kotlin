@@ -15,503 +15,102 @@ public  final class ToolConfig extends
     // @@protoc_insertion_point(message_implements:agent.v1.ToolConfig)
     ToolConfigOrBuilder {
   private ToolConfig() {
-    values_ = emptyProtobufList();
   }
-  public interface ValuesEntryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:agent.v1.ToolConfig.ValuesEntry)
-      com.google.protobuf.MessageLiteOrBuilder {
-
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The key.
-     */
-    java.lang.String getKey();
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The bytes for key.
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     * @return Whether the value field is set.
-     */
-    boolean hasValue();
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     * @return The value.
-     */
-    com.google.protobuf.Value getValue();
-  }
-  /**
-   * Protobuf type {@code agent.v1.ToolConfig.ValuesEntry}
-   */
-  public  static final class ValuesEntry extends
-      com.google.protobuf.GeneratedMessageLite<
-          ValuesEntry, ValuesEntry.Builder> implements
-      // @@protoc_insertion_point(message_implements:agent.v1.ToolConfig.ValuesEntry)
-      ValuesEntryOrBuilder {
-    private ValuesEntry() {
-      key_ = "";
-    }
-    private int bitField0_;
-    public static final int KEY_FIELD_NUMBER = 1;
-    private java.lang.String key_;
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The key.
-     */
-    @java.lang.Override
-    public java.lang.String getKey() {
-      return key_;
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The bytes for key.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(key_);
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @param value The key to set.
-     */
-    private void setKey(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-
-      key_ = value;
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     */
-    private void clearKey() {
-
-      key_ = getDefaultInstance().getKey();
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @param value The bytes for key to set.
-     */
-    private void setKeyBytes(
-        com.google.protobuf.ByteString value) {
-      checkByteStringIsUtf8(value);
-      key_ = value.toStringUtf8();
-
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 2;
-    private com.google.protobuf.Value value_;
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     */
-    @java.lang.Override
-    public boolean hasValue() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.Value getValue() {
-      return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
-    }
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     */
-    private void setValue(com.google.protobuf.Value value) {
-      java.util.Objects.requireNonNull(value);
-      value_ = value;
-      bitField0_ |= 0x00000001;
-    }
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     */
-    @java.lang.SuppressWarnings("ReferenceEquality")
-    private void mergeValue(com.google.protobuf.Value value) {
-      java.util.Objects.requireNonNull(value);
-      if (value_ != null &&
-          value_ != com.google.protobuf.Value.getDefaultInstance()) {
-        value_ =
-          com.google.protobuf.Value.newBuilder(value_).mergeFrom(value).buildPartial();
-      } else {
-        value_ = value;
-      }
-      bitField0_ |= 0x00000001;
-    }
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     */
-    private void clearValue() {
-      value_ = null;
-      bitField0_ = (bitField0_ & ~0x00000001);
-    }
-
-    public static agent.v1.ToolConfig.ValuesEntry parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.ToolConfig.ValuesEntry parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.ToolConfig.ValuesEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.ToolConfig.ValuesEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.ToolConfig.ValuesEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.ToolConfig.ValuesEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.ToolConfig.ValuesEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
-    }
-    public static agent.v1.ToolConfig.ValuesEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-
-    public static agent.v1.ToolConfig.ValuesEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
-    }
-
-    public static agent.v1.ToolConfig.ValuesEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-    public static agent.v1.ToolConfig.ValuesEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
-    }
-    public static agent.v1.ToolConfig.ValuesEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
-    }
-    public static Builder newBuilder(agent.v1.ToolConfig.ValuesEntry prototype) {
-      return DEFAULT_INSTANCE.createBuilder(prototype);
-    }
-
-    /**
-     * Protobuf type {@code agent.v1.ToolConfig.ValuesEntry}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          agent.v1.ToolConfig.ValuesEntry, Builder> implements
-        // @@protoc_insertion_point(builder_implements:agent.v1.ToolConfig.ValuesEntry)
-        agent.v1.ToolConfig.ValuesEntryOrBuilder {
-      // Construct using agent.v1.ToolConfig.ValuesEntry.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
-      }
-
-
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return The key.
-       */
-      @java.lang.Override
-      public java.lang.String getKey() {
-        return instance.getKey();
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return The bytes for key.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        return instance.getKeyBytes();
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @param value The key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKey(
-          java.lang.String value) {
-        copyOnWrite();
-        instance.setKey(value);
-        return this;
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKey() {
-        copyOnWrite();
-        instance.clearKey();
-        return this;
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @param value The bytes for key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setKeyBytes(value);
-        return this;
-      }
-
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      @java.lang.Override
-      public boolean hasValue() {
-        return instance.hasValue();
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      @java.lang.Override
-      public com.google.protobuf.Value getValue() {
-        return instance.getValue();
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      public Builder setValue(com.google.protobuf.Value value) {
-        copyOnWrite();
-        instance.setValue(value);
-        return this;
-        }
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      public Builder setValue(
-          com.google.protobuf.Value.Builder builderForValue) {
-        copyOnWrite();
-        instance.setValue(builderForValue.build());
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      public Builder mergeValue(com.google.protobuf.Value value) {
-        copyOnWrite();
-        instance.mergeValue(value);
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      public Builder clearValue() {  copyOnWrite();
-        instance.clearValue();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:agent.v1.ToolConfig.ValuesEntry)
-    }
-    @java.lang.Override
-    @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new agent.v1.ToolConfig.ValuesEntry();
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case BUILD_MESSAGE_INFO: {
-            java.lang.Object[] objects = new java.lang.Object[] {
-              "bitField0_",
-              "key_",
-              "value_",
-            };
-            java.lang.String info =
-                "\u0000\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u1009" +
-                "\u0000";
-            return newMessageInfo(DEFAULT_INSTANCE, info, objects);
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          com.google.protobuf.Parser<agent.v1.ToolConfig.ValuesEntry> parser = PARSER;
-          if (parser == null) {
-            synchronized (agent.v1.ToolConfig.ValuesEntry.class) {
-              parser = PARSER;
-              if (parser == null) {
-                parser =
-                    new DefaultInstanceBasedParser<agent.v1.ToolConfig.ValuesEntry>(
-                        DEFAULT_INSTANCE);
-                PARSER = parser;
-              }
-            }
-          }
-          return parser;
-        }
-        case GET_MEMOIZED_IS_INITIALIZED: {
-          return (byte) 1;
-        }
-        // SET_MEMOIZED_IS_INITIALIZED is never called for this message.
-        // So it can do anything. Combine with default case for smaller codegen.
-        case SET_MEMOIZED_IS_INITIALIZED:
-      }
-      // Should never happen. Generates tight code to throw an exception.
-      throw null;
-    }
-
-
-    // @@protoc_insertion_point(class_scope:agent.v1.ToolConfig.ValuesEntry)
-    private static final agent.v1.ToolConfig.ValuesEntry DEFAULT_INSTANCE;
-    static {
-      ValuesEntry defaultInstance = new ValuesEntry();
-      // New instances are implicitly immutable so no need to make
-      // immutable.
-      DEFAULT_INSTANCE = defaultInstance;
-      com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
-        ValuesEntry.class, defaultInstance);
-    }
-
-    public static agent.v1.ToolConfig.ValuesEntry getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static volatile com.google.protobuf.Parser<ValuesEntry> PARSER;
-
-    public static com.google.protobuf.Parser<ValuesEntry> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
-    }
-  }
-
   public static final int VALUES_FIELD_NUMBER = 1;
-  private com.google.protobuf.Internal.ProtobufList<agent.v1.ToolConfig.ValuesEntry> values_;
-  /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<agent.v1.ToolConfig.ValuesEntry> getValuesList() {
+  private static final class ValuesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntryLite<
+        java.lang.String, com.google.protobuf.Value> defaultEntry =
+            com.google.protobuf.MapEntryLite
+            .<java.lang.String, com.google.protobuf.Value>newDefaultInstance(
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                com.google.protobuf.Value.getDefaultInstance());
+  }
+  private com.google.protobuf.MapFieldLite<
+      java.lang.String, com.google.protobuf.Value> values_ =
+          com.google.protobuf.MapFieldLite.emptyMapField();
+  private com.google.protobuf.MapFieldLite<java.lang.String, com.google.protobuf.Value>
+  internalGetValues() {
     return values_;
   }
-  /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-   */
-  public java.util.List<? extends agent.v1.ToolConfig.ValuesEntryOrBuilder> 
-      getValuesOrBuilderList() {
+  private com.google.protobuf.MapFieldLite<java.lang.String, com.google.protobuf.Value>
+  internalGetMutableValues() {
+    if (!values_.isMutable()) {
+      values_ = values_.mutableCopy();
+    }
     return values_;
   }
-  /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-   */
   @java.lang.Override
-  public int getValuesCount() {
-    return values_.size();
-  }
-  /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-   */
-  @java.lang.Override
-  public agent.v1.ToolConfig.ValuesEntry getValues(int index) {
-    return values_.get(index);
-  }
-  /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-   */
-  public agent.v1.ToolConfig.ValuesEntryOrBuilder getValuesOrBuilder(
-      int index) {
-    return values_.get(index);
-  }
-  private void ensureValuesIsMutable() {
-    com.google.protobuf.Internal.ProtobufList<agent.v1.ToolConfig.ValuesEntry> tmp = values_;
-    if (!tmp.isModifiable()) {
-      values_ =
-          com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
-     }
-  }
 
-  /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-   */
-  private void setValues(
-      int index, agent.v1.ToolConfig.ValuesEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureValuesIsMutable();
-    values_.set(index, value);
+  public int getValuesCount() {
+    return internalGetValues().size();
   }
   /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
    */
-  private void addValues(agent.v1.ToolConfig.ValuesEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureValuesIsMutable();
-    values_.add(value);
+  @java.lang.Override
+
+  public boolean containsValues(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key);
+    return internalGetValues().containsKey(key);
   }
   /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
+   * Use {@link #getValuesMap()} instead.
    */
-  private void addValues(
-      int index, agent.v1.ToolConfig.ValuesEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureValuesIsMutable();
-    values_.add(index, value);
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.protobuf.Value> getValues() {
+    return getValuesMap();
   }
   /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
    */
-  private void addAllValues(
-      java.lang.Iterable<? extends agent.v1.ToolConfig.ValuesEntry> values) {
-    ensureValuesIsMutable();
-    com.google.protobuf.AbstractMessageLite.addAll(
-        values, values_);
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, com.google.protobuf.Value> getValuesMap() {
+    return java.util.Collections.unmodifiableMap(
+        internalGetValues());
   }
   /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
    */
-  private void clearValues() {
-    values_ = emptyProtobufList();
+  @java.lang.Override
+
+  public /* nullable */
+com.google.protobuf.Value getValuesOrDefault(
+      java.lang.String key,
+      /* nullable */
+com.google.protobuf.Value defaultValue) {
+    java.util.Objects.requireNonNull(key);
+    java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+        internalGetValues();
+    com.google.protobuf.Value v = map.get(key);
+    return v != null ? v : defaultValue;
   }
   /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
    */
-  private void removeValues(int index) {
-    ensureValuesIsMutable();
-    values_.remove(index);
+  @java.lang.Override
+
+  public com.google.protobuf.Value getValuesOrThrow(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key);
+    java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+        internalGetValues();
+    com.google.protobuf.Value v = map.get(key);
+    if (v == null) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return v;
+  }
+  /**
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
+   */
+  private java.util.Map<java.lang.String, com.google.protobuf.Value>
+  getMutableValuesMap() {
+    return internalGetMutableValues();
   }
 
   public static agent.v1.ToolConfig parseFrom(
@@ -611,105 +210,103 @@ public  final class ToolConfig extends
     }
 
 
-    /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-     */
     @java.lang.Override
-    public java.util.List<agent.v1.ToolConfig.ValuesEntry> getValuesList() {
-      return java.util.Collections.unmodifiableList(
-          instance.getValuesList());
-    }
-    /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-     */
-    @java.lang.Override
+
     public int getValuesCount() {
-      return instance.getValuesCount();
-    }/**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
+      return instance.getValuesMap().size();
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
      */
     @java.lang.Override
-    public agent.v1.ToolConfig.ValuesEntry getValues(int index) {
-      return instance.getValues(index);
+
+    public boolean containsValues(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
+      return instance.getValuesMap().containsKey(key);
     }
-    /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-     */
-    public Builder setValues(
-        int index, agent.v1.ToolConfig.ValuesEntry value) {
-      copyOnWrite();
-      instance.setValues(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-     */
-    public Builder setValues(
-        int index, agent.v1.ToolConfig.ValuesEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.setValues(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-     */
-    public Builder addValues(agent.v1.ToolConfig.ValuesEntry value) {
-      copyOnWrite();
-      instance.addValues(value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-     */
-    public Builder addValues(
-        int index, agent.v1.ToolConfig.ValuesEntry value) {
-      copyOnWrite();
-      instance.addValues(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-     */
-    public Builder addValues(
-        agent.v1.ToolConfig.ValuesEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.addValues(builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-     */
-    public Builder addValues(
-        int index, agent.v1.ToolConfig.ValuesEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.addValues(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-     */
-    public Builder addAllValues(
-        java.lang.Iterable<? extends agent.v1.ToolConfig.ValuesEntry> values) {
-      copyOnWrite();
-      instance.addAllValues(values);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-     */
+
     public Builder clearValues() {
       copyOnWrite();
-      instance.clearValues();
+      instance.getMutableValuesMap().clear();
       return this;
     }
     /**
-     * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
      */
-    public Builder removeValues(int index) {
+
+    public Builder removeValues(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
       copyOnWrite();
-      instance.removeValues(index);
+      instance.getMutableValuesMap().remove(key);
+      return this;
+    }
+    /**
+     * Use {@link #getValuesMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.protobuf.Value> getValues() {
+      return getValuesMap();
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.protobuf.Value> getValuesMap() {
+      return java.util.Collections.unmodifiableMap(
+          instance.getValuesMap());
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
+     */
+    @java.lang.Override
+
+    public /* nullable */
+com.google.protobuf.Value getValuesOrDefault(
+        java.lang.String key,
+        /* nullable */
+com.google.protobuf.Value defaultValue) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+          instance.getValuesMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
+     */
+    @java.lang.Override
+
+    public com.google.protobuf.Value getValuesOrThrow(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+          instance.getValuesMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
+     */
+    public Builder putValues(
+        java.lang.String key,
+        com.google.protobuf.Value value) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Objects.requireNonNull(value);
+      copyOnWrite();
+      instance.getMutableValuesMap().put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
+     */
+    public Builder putAllValues(
+        java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
+      copyOnWrite();
+      instance.getMutableValuesMap().putAll(values);
       return this;
     }
 
@@ -730,10 +327,10 @@ public  final class ToolConfig extends
       case BUILD_MESSAGE_INFO: {
           java.lang.Object[] objects = new java.lang.Object[] {
             "values_",
-            agent.v1.ToolConfig.ValuesEntry.class,
+            ValuesDefaultEntryHolder.defaultEntry,
           };
           java.lang.String info =
-              "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b";
+              "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u00012";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

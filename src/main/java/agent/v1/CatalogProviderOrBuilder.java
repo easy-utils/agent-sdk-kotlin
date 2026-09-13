@@ -84,16 +84,38 @@ public interface CatalogProviderOrBuilder extends
       getEnvBytes(int index);
 
   /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-   */
-  java.util.List<agent.v1.CatalogProvider.ModelsEntry> 
-      getModelsList();
-  /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-   */
-  agent.v1.CatalogProvider.ModelsEntry getModels(int index);
-  /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
    */
   int getModelsCount();
+  /**
+   * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
+   */
+  boolean containsModels(
+      java.lang.String key);
+  /**
+   * Use {@link #getModelsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.protobuf.Value>
+  getModels();
+  /**
+   * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
+   */
+  java.util.Map<java.lang.String, com.google.protobuf.Value>
+  getModelsMap();
+  /**
+   * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
+   */
+
+  /* nullable */
+com.google.protobuf.Value getModelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+com.google.protobuf.Value defaultValue);
+  /**
+   * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
+   */
+
+  com.google.protobuf.Value getModelsOrThrow(
+      java.lang.String key);
 }

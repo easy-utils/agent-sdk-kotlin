@@ -104,131 +104,61 @@ public object DiscoverGatewayModelsRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class HeadersProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .agent.v1.DiscoverGatewayModelsRequest.HeadersEntry headers = 5 [json_name = "headers"];`
+     * `map<string, string> headers = 5 [json_name = "headers"];`
      */
-     public val headers: com.google.protobuf.kotlin.DslList<agent.v1.DiscoverGatewayModelsRequest.HeadersEntry, HeadersProxy>
+     public val headers: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, HeadersProxy>
       @kotlin.jvm.JvmSynthetic
-  get() = com.google.protobuf.kotlin.DslList(
-        _builder.headersList
+@kotlin.jvm.JvmName("getHeadersMap")
+      get() = com.google.protobuf.kotlin.DslMap(
+        _builder.headersMap
       )
     /**
-     * `repeated .agent.v1.DiscoverGatewayModelsRequest.HeadersEntry headers = 5 [json_name = "headers"];`
-     * @param value The headers to add.
+     * `map<string, string> headers = 5 [json_name = "headers"];`
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addHeaders")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.DiscoverGatewayModelsRequest.HeadersEntry, HeadersProxy>.add(value: agent.v1.DiscoverGatewayModelsRequest.HeadersEntry) {
-      _builder.addHeaders(value)
-    }
+    @kotlin.jvm.JvmName("putHeaders")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, HeadersProxy>
+      .put(key: kotlin.String, value: kotlin.String) {
+         _builder.putHeaders(key, value)
+       }
     /**
-     * `repeated .agent.v1.DiscoverGatewayModelsRequest.HeadersEntry headers = 5 [json_name = "headers"];`
-     * @param value The headers to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignHeaders")
-    @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<agent.v1.DiscoverGatewayModelsRequest.HeadersEntry, HeadersProxy>.plusAssign(value: agent.v1.DiscoverGatewayModelsRequest.HeadersEntry) {
-      add(value)
-    }
-    /**
-     * `repeated .agent.v1.DiscoverGatewayModelsRequest.HeadersEntry headers = 5 [json_name = "headers"];`
-     * @param values The headers to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllHeaders")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.DiscoverGatewayModelsRequest.HeadersEntry, HeadersProxy>.addAll(values: kotlin.collections.Iterable<agent.v1.DiscoverGatewayModelsRequest.HeadersEntry>) {
-      _builder.addAllHeaders(values)
-    }
-    /**
-     * `repeated .agent.v1.DiscoverGatewayModelsRequest.HeadersEntry headers = 5 [json_name = "headers"];`
-     * @param values The headers to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllHeaders")
-    @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<agent.v1.DiscoverGatewayModelsRequest.HeadersEntry, HeadersProxy>.plusAssign(values: kotlin.collections.Iterable<agent.v1.DiscoverGatewayModelsRequest.HeadersEntry>) {
-      addAll(values)
-    }
-    /**
-     * `repeated .agent.v1.DiscoverGatewayModelsRequest.HeadersEntry headers = 5 [json_name = "headers"];`
-     * @param index The index to set the value at.
-     * @param value The headers to set.
+     * `map<string, string> headers = 5 [json_name = "headers"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setHeaders")
-    public operator fun com.google.protobuf.kotlin.DslList<agent.v1.DiscoverGatewayModelsRequest.HeadersEntry, HeadersProxy>.set(index: kotlin.Int, value: agent.v1.DiscoverGatewayModelsRequest.HeadersEntry) {
-      _builder.setHeaders(index, value)
-    }
+    @Suppress("NOTHING_TO_INLINE")
+    public inline operator fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, HeadersProxy>
+      .set(key: kotlin.String, value: kotlin.String) {
+         put(key, value)
+       }
     /**
-     * `repeated .agent.v1.DiscoverGatewayModelsRequest.HeadersEntry headers = 5 [json_name = "headers"];`
+     * `map<string, string> headers = 5 [json_name = "headers"];`
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("removeHeaders")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, HeadersProxy>
+      .remove(key: kotlin.String) {
+         _builder.removeHeaders(key)
+       }
+    /**
+     * `map<string, string> headers = 5 [json_name = "headers"];`
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("putAllHeaders")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, HeadersProxy>
+      .putAll(map: kotlin.collections.Map<kotlin.String, kotlin.String>) {
+         _builder.putAllHeaders(map)
+       }
+    /**
+     * `map<string, string> headers = 5 [json_name = "headers"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearHeaders")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.DiscoverGatewayModelsRequest.HeadersEntry, HeadersProxy>.clear() {
-      _builder.clearHeaders()
-    }
-  }
-  @kotlin.jvm.JvmName("-initializeheadersEntry")
-  public inline fun headersEntry(block: agent.v1.DiscoverGatewayModelsRequestKt.HeadersEntryKt.Dsl.() -> kotlin.Unit): agent.v1.DiscoverGatewayModelsRequest.HeadersEntry =
-    agent.v1.DiscoverGatewayModelsRequestKt.HeadersEntryKt.Dsl._create(agent.v1.DiscoverGatewayModelsRequest.HeadersEntry.newBuilder()).apply { block() }._build()
-  /**
-   * Protobuf type `agent.v1.DiscoverGatewayModelsRequest.HeadersEntry`
-   */
-  public object HeadersEntryKt {
-    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    @com.google.protobuf.kotlin.ProtoDslMarker
-    public class Dsl private constructor(
-      private val _builder: agent.v1.DiscoverGatewayModelsRequest.HeadersEntry.Builder
-    ) {
-      public companion object {
-        @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-        internal fun _create(builder: agent.v1.DiscoverGatewayModelsRequest.HeadersEntry.Builder): Dsl = Dsl(builder)
-      }
-
-      @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-      internal fun _build(): agent.v1.DiscoverGatewayModelsRequest.HeadersEntry = _builder.build()
-
-      /**
-       * `string key = 1 [json_name = "key"];`
-       */
-      public var key: kotlin.String
-        @kotlin.jvm.JvmName("getKey")
-          get() = _builder.key
-        @kotlin.jvm.JvmName("setKey")
-          set(value) {
-          _builder.key = value
-        }
-      /**
-       * `string key = 1 [json_name = "key"];`
-       */
-      public fun clearKey() {
-        _builder.clearKey()
-      }
-
-      /**
-       * `string value = 2 [json_name = "value"];`
-       */
-      public var value: kotlin.String
-        @kotlin.jvm.JvmName("getValue")
-          get() = _builder.value
-        @kotlin.jvm.JvmName("setValue")
-          set(value) {
-          _builder.value = value
-        }
-      /**
-       * `string value = 2 [json_name = "value"];`
-       */
-      public fun clearValue() {
-        _builder.clearValue()
-      }
-    }
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, HeadersProxy>
+      .clear() {
+         _builder.clearHeaders()
+       }
   }
 }
 public inline fun agent.v1.DiscoverGatewayModelsRequest.copy(block: `agent.v1`.DiscoverGatewayModelsRequestKt.Dsl.() -> kotlin.Unit): agent.v1.DiscoverGatewayModelsRequest =
   `agent.v1`.DiscoverGatewayModelsRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
-
-public inline fun agent.v1.DiscoverGatewayModelsRequest.HeadersEntry.copy(block: `agent.v1`.DiscoverGatewayModelsRequestKt.HeadersEntryKt.Dsl.() -> kotlin.Unit): agent.v1.DiscoverGatewayModelsRequest.HeadersEntry =
-  `agent.v1`.DiscoverGatewayModelsRequestKt.HeadersEntryKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

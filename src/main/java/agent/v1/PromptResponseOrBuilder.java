@@ -23,18 +23,40 @@ public interface PromptResponseOrBuilder extends
       getEventBytes();
 
   /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-   */
-  java.util.List<agent.v1.PromptResponse.ParamsEntry> 
-      getParamsList();
-  /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-   */
-  agent.v1.PromptResponse.ParamsEntry getParams(int index);
-  /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
+   * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
    */
   int getParamsCount();
+  /**
+   * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
+   */
+  boolean containsParams(
+      java.lang.String key);
+  /**
+   * Use {@link #getParamsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getParams();
+  /**
+   * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getParamsMap();
+  /**
+   * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
+   */
+
+  /* nullable */
+java.lang.String getParamsOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
+   */
+
+  java.lang.String getParamsOrThrow(
+      java.lang.String key);
 
   /**
    * <code>string eid = 3 [json_name = "eid"];</code>

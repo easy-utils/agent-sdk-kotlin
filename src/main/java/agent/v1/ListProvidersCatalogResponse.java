@@ -15,503 +15,102 @@ public  final class ListProvidersCatalogResponse extends
     // @@protoc_insertion_point(message_implements:agent.v1.ListProvidersCatalogResponse)
     ListProvidersCatalogResponseOrBuilder {
   private ListProvidersCatalogResponse() {
-    providers_ = emptyProtobufList();
   }
-  public interface ProvidersEntryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:agent.v1.ListProvidersCatalogResponse.ProvidersEntry)
-      com.google.protobuf.MessageLiteOrBuilder {
-
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The key.
-     */
-    java.lang.String getKey();
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The bytes for key.
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
-    /**
-     * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-     * @return Whether the value field is set.
-     */
-    boolean hasValue();
-    /**
-     * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-     * @return The value.
-     */
-    agent.v1.CatalogProvider getValue();
-  }
-  /**
-   * Protobuf type {@code agent.v1.ListProvidersCatalogResponse.ProvidersEntry}
-   */
-  public  static final class ProvidersEntry extends
-      com.google.protobuf.GeneratedMessageLite<
-          ProvidersEntry, ProvidersEntry.Builder> implements
-      // @@protoc_insertion_point(message_implements:agent.v1.ListProvidersCatalogResponse.ProvidersEntry)
-      ProvidersEntryOrBuilder {
-    private ProvidersEntry() {
-      key_ = "";
-    }
-    private int bitField0_;
-    public static final int KEY_FIELD_NUMBER = 1;
-    private java.lang.String key_;
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The key.
-     */
-    @java.lang.Override
-    public java.lang.String getKey() {
-      return key_;
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The bytes for key.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(key_);
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @param value The key to set.
-     */
-    private void setKey(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-
-      key_ = value;
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     */
-    private void clearKey() {
-
-      key_ = getDefaultInstance().getKey();
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @param value The bytes for key to set.
-     */
-    private void setKeyBytes(
-        com.google.protobuf.ByteString value) {
-      checkByteStringIsUtf8(value);
-      key_ = value.toStringUtf8();
-
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 2;
-    private agent.v1.CatalogProvider value_;
-    /**
-     * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-     */
-    @java.lang.Override
-    public boolean hasValue() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-     */
-    @java.lang.Override
-    public agent.v1.CatalogProvider getValue() {
-      return value_ == null ? agent.v1.CatalogProvider.getDefaultInstance() : value_;
-    }
-    /**
-     * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-     */
-    private void setValue(agent.v1.CatalogProvider value) {
-      java.util.Objects.requireNonNull(value);
-      value_ = value;
-      bitField0_ |= 0x00000001;
-    }
-    /**
-     * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-     */
-    @java.lang.SuppressWarnings("ReferenceEquality")
-    private void mergeValue(agent.v1.CatalogProvider value) {
-      java.util.Objects.requireNonNull(value);
-      if (value_ != null &&
-          value_ != agent.v1.CatalogProvider.getDefaultInstance()) {
-        value_ =
-          agent.v1.CatalogProvider.newBuilder(value_).mergeFrom(value).buildPartial();
-      } else {
-        value_ = value;
-      }
-      bitField0_ |= 0x00000001;
-    }
-    /**
-     * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-     */
-    private void clearValue() {
-      value_ = null;
-      bitField0_ = (bitField0_ & ~0x00000001);
-    }
-
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
-    }
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
-    }
-
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
-    }
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
-    }
-    public static Builder newBuilder(agent.v1.ListProvidersCatalogResponse.ProvidersEntry prototype) {
-      return DEFAULT_INSTANCE.createBuilder(prototype);
-    }
-
-    /**
-     * Protobuf type {@code agent.v1.ListProvidersCatalogResponse.ProvidersEntry}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          agent.v1.ListProvidersCatalogResponse.ProvidersEntry, Builder> implements
-        // @@protoc_insertion_point(builder_implements:agent.v1.ListProvidersCatalogResponse.ProvidersEntry)
-        agent.v1.ListProvidersCatalogResponse.ProvidersEntryOrBuilder {
-      // Construct using agent.v1.ListProvidersCatalogResponse.ProvidersEntry.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
-      }
-
-
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return The key.
-       */
-      @java.lang.Override
-      public java.lang.String getKey() {
-        return instance.getKey();
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return The bytes for key.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        return instance.getKeyBytes();
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @param value The key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKey(
-          java.lang.String value) {
-        copyOnWrite();
-        instance.setKey(value);
-        return this;
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKey() {
-        copyOnWrite();
-        instance.clearKey();
-        return this;
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @param value The bytes for key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setKeyBytes(value);
-        return this;
-      }
-
-      /**
-       * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-       */
-      @java.lang.Override
-      public boolean hasValue() {
-        return instance.hasValue();
-      }
-      /**
-       * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-       */
-      @java.lang.Override
-      public agent.v1.CatalogProvider getValue() {
-        return instance.getValue();
-      }
-      /**
-       * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-       */
-      public Builder setValue(agent.v1.CatalogProvider value) {
-        copyOnWrite();
-        instance.setValue(value);
-        return this;
-        }
-      /**
-       * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-       */
-      public Builder setValue(
-          agent.v1.CatalogProvider.Builder builderForValue) {
-        copyOnWrite();
-        instance.setValue(builderForValue.build());
-        return this;
-      }
-      /**
-       * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-       */
-      public Builder mergeValue(agent.v1.CatalogProvider value) {
-        copyOnWrite();
-        instance.mergeValue(value);
-        return this;
-      }
-      /**
-       * <code>.agent.v1.CatalogProvider value = 2 [json_name = "value"];</code>
-       */
-      public Builder clearValue() {  copyOnWrite();
-        instance.clearValue();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:agent.v1.ListProvidersCatalogResponse.ProvidersEntry)
-    }
-    @java.lang.Override
-    @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new agent.v1.ListProvidersCatalogResponse.ProvidersEntry();
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case BUILD_MESSAGE_INFO: {
-            java.lang.Object[] objects = new java.lang.Object[] {
-              "bitField0_",
-              "key_",
-              "value_",
-            };
-            java.lang.String info =
-                "\u0000\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u1009" +
-                "\u0000";
-            return newMessageInfo(DEFAULT_INSTANCE, info, objects);
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          com.google.protobuf.Parser<agent.v1.ListProvidersCatalogResponse.ProvidersEntry> parser = PARSER;
-          if (parser == null) {
-            synchronized (agent.v1.ListProvidersCatalogResponse.ProvidersEntry.class) {
-              parser = PARSER;
-              if (parser == null) {
-                parser =
-                    new DefaultInstanceBasedParser<agent.v1.ListProvidersCatalogResponse.ProvidersEntry>(
-                        DEFAULT_INSTANCE);
-                PARSER = parser;
-              }
-            }
-          }
-          return parser;
-        }
-        case GET_MEMOIZED_IS_INITIALIZED: {
-          return (byte) 1;
-        }
-        // SET_MEMOIZED_IS_INITIALIZED is never called for this message.
-        // So it can do anything. Combine with default case for smaller codegen.
-        case SET_MEMOIZED_IS_INITIALIZED:
-      }
-      // Should never happen. Generates tight code to throw an exception.
-      throw null;
-    }
-
-
-    // @@protoc_insertion_point(class_scope:agent.v1.ListProvidersCatalogResponse.ProvidersEntry)
-    private static final agent.v1.ListProvidersCatalogResponse.ProvidersEntry DEFAULT_INSTANCE;
-    static {
-      ProvidersEntry defaultInstance = new ProvidersEntry();
-      // New instances are implicitly immutable so no need to make
-      // immutable.
-      DEFAULT_INSTANCE = defaultInstance;
-      com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
-        ProvidersEntry.class, defaultInstance);
-    }
-
-    public static agent.v1.ListProvidersCatalogResponse.ProvidersEntry getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static volatile com.google.protobuf.Parser<ProvidersEntry> PARSER;
-
-    public static com.google.protobuf.Parser<ProvidersEntry> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
-    }
-  }
-
   public static final int PROVIDERS_FIELD_NUMBER = 1;
-  private com.google.protobuf.Internal.ProtobufList<agent.v1.ListProvidersCatalogResponse.ProvidersEntry> providers_;
-  /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<agent.v1.ListProvidersCatalogResponse.ProvidersEntry> getProvidersList() {
+  private static final class ProvidersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntryLite<
+        java.lang.String, agent.v1.CatalogProvider> defaultEntry =
+            com.google.protobuf.MapEntryLite
+            .<java.lang.String, agent.v1.CatalogProvider>newDefaultInstance(
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                agent.v1.CatalogProvider.getDefaultInstance());
+  }
+  private com.google.protobuf.MapFieldLite<
+      java.lang.String, agent.v1.CatalogProvider> providers_ =
+          com.google.protobuf.MapFieldLite.emptyMapField();
+  private com.google.protobuf.MapFieldLite<java.lang.String, agent.v1.CatalogProvider>
+  internalGetProviders() {
     return providers_;
   }
-  /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-   */
-  public java.util.List<? extends agent.v1.ListProvidersCatalogResponse.ProvidersEntryOrBuilder> 
-      getProvidersOrBuilderList() {
+  private com.google.protobuf.MapFieldLite<java.lang.String, agent.v1.CatalogProvider>
+  internalGetMutableProviders() {
+    if (!providers_.isMutable()) {
+      providers_ = providers_.mutableCopy();
+    }
     return providers_;
   }
-  /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-   */
   @java.lang.Override
-  public int getProvidersCount() {
-    return providers_.size();
-  }
-  /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-   */
-  @java.lang.Override
-  public agent.v1.ListProvidersCatalogResponse.ProvidersEntry getProviders(int index) {
-    return providers_.get(index);
-  }
-  /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-   */
-  public agent.v1.ListProvidersCatalogResponse.ProvidersEntryOrBuilder getProvidersOrBuilder(
-      int index) {
-    return providers_.get(index);
-  }
-  private void ensureProvidersIsMutable() {
-    com.google.protobuf.Internal.ProtobufList<agent.v1.ListProvidersCatalogResponse.ProvidersEntry> tmp = providers_;
-    if (!tmp.isModifiable()) {
-      providers_ =
-          com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
-     }
-  }
 
-  /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-   */
-  private void setProviders(
-      int index, agent.v1.ListProvidersCatalogResponse.ProvidersEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureProvidersIsMutable();
-    providers_.set(index, value);
+  public int getProvidersCount() {
+    return internalGetProviders().size();
   }
   /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
+   * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
    */
-  private void addProviders(agent.v1.ListProvidersCatalogResponse.ProvidersEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureProvidersIsMutable();
-    providers_.add(value);
+  @java.lang.Override
+
+  public boolean containsProviders(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key);
+    return internalGetProviders().containsKey(key);
   }
   /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
+   * Use {@link #getProvidersMap()} instead.
    */
-  private void addProviders(
-      int index, agent.v1.ListProvidersCatalogResponse.ProvidersEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureProvidersIsMutable();
-    providers_.add(index, value);
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, agent.v1.CatalogProvider> getProviders() {
+    return getProvidersMap();
   }
   /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
+   * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
    */
-  private void addAllProviders(
-      java.lang.Iterable<? extends agent.v1.ListProvidersCatalogResponse.ProvidersEntry> values) {
-    ensureProvidersIsMutable();
-    com.google.protobuf.AbstractMessageLite.addAll(
-        values, providers_);
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, agent.v1.CatalogProvider> getProvidersMap() {
+    return java.util.Collections.unmodifiableMap(
+        internalGetProviders());
   }
   /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
+   * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
    */
-  private void clearProviders() {
-    providers_ = emptyProtobufList();
+  @java.lang.Override
+
+  public /* nullable */
+agent.v1.CatalogProvider getProvidersOrDefault(
+      java.lang.String key,
+      /* nullable */
+agent.v1.CatalogProvider defaultValue) {
+    java.util.Objects.requireNonNull(key);
+    java.util.Map<java.lang.String, agent.v1.CatalogProvider> map =
+        internalGetProviders();
+    agent.v1.CatalogProvider v = map.get(key);
+    return v != null ? v : defaultValue;
   }
   /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
+   * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
    */
-  private void removeProviders(int index) {
-    ensureProvidersIsMutable();
-    providers_.remove(index);
+  @java.lang.Override
+
+  public agent.v1.CatalogProvider getProvidersOrThrow(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key);
+    java.util.Map<java.lang.String, agent.v1.CatalogProvider> map =
+        internalGetProviders();
+    agent.v1.CatalogProvider v = map.get(key);
+    if (v == null) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return v;
+  }
+  /**
+   * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
+   */
+  private java.util.Map<java.lang.String, agent.v1.CatalogProvider>
+  getMutableProvidersMap() {
+    return internalGetMutableProviders();
   }
 
   public static agent.v1.ListProvidersCatalogResponse parseFrom(
@@ -611,105 +210,103 @@ public  final class ListProvidersCatalogResponse extends
     }
 
 
-    /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-     */
     @java.lang.Override
-    public java.util.List<agent.v1.ListProvidersCatalogResponse.ProvidersEntry> getProvidersList() {
-      return java.util.Collections.unmodifiableList(
-          instance.getProvidersList());
-    }
-    /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-     */
-    @java.lang.Override
+
     public int getProvidersCount() {
-      return instance.getProvidersCount();
-    }/**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
+      return instance.getProvidersMap().size();
+    }
+    /**
+     * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
      */
     @java.lang.Override
-    public agent.v1.ListProvidersCatalogResponse.ProvidersEntry getProviders(int index) {
-      return instance.getProviders(index);
+
+    public boolean containsProviders(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
+      return instance.getProvidersMap().containsKey(key);
     }
-    /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-     */
-    public Builder setProviders(
-        int index, agent.v1.ListProvidersCatalogResponse.ProvidersEntry value) {
-      copyOnWrite();
-      instance.setProviders(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-     */
-    public Builder setProviders(
-        int index, agent.v1.ListProvidersCatalogResponse.ProvidersEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.setProviders(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-     */
-    public Builder addProviders(agent.v1.ListProvidersCatalogResponse.ProvidersEntry value) {
-      copyOnWrite();
-      instance.addProviders(value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-     */
-    public Builder addProviders(
-        int index, agent.v1.ListProvidersCatalogResponse.ProvidersEntry value) {
-      copyOnWrite();
-      instance.addProviders(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-     */
-    public Builder addProviders(
-        agent.v1.ListProvidersCatalogResponse.ProvidersEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.addProviders(builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-     */
-    public Builder addProviders(
-        int index, agent.v1.ListProvidersCatalogResponse.ProvidersEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.addProviders(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-     */
-    public Builder addAllProviders(
-        java.lang.Iterable<? extends agent.v1.ListProvidersCatalogResponse.ProvidersEntry> values) {
-      copyOnWrite();
-      instance.addAllProviders(values);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-     */
+
     public Builder clearProviders() {
       copyOnWrite();
-      instance.clearProviders();
+      instance.getMutableProvidersMap().clear();
       return this;
     }
     /**
-     * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
+     * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
      */
-    public Builder removeProviders(int index) {
+
+    public Builder removeProviders(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
       copyOnWrite();
-      instance.removeProviders(index);
+      instance.getMutableProvidersMap().remove(key);
+      return this;
+    }
+    /**
+     * Use {@link #getProvidersMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, agent.v1.CatalogProvider> getProviders() {
+      return getProvidersMap();
+    }
+    /**
+     * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, agent.v1.CatalogProvider> getProvidersMap() {
+      return java.util.Collections.unmodifiableMap(
+          instance.getProvidersMap());
+    }
+    /**
+     * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
+     */
+    @java.lang.Override
+
+    public /* nullable */
+agent.v1.CatalogProvider getProvidersOrDefault(
+        java.lang.String key,
+        /* nullable */
+agent.v1.CatalogProvider defaultValue) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Map<java.lang.String, agent.v1.CatalogProvider> map =
+          instance.getProvidersMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
+     */
+    @java.lang.Override
+
+    public agent.v1.CatalogProvider getProvidersOrThrow(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Map<java.lang.String, agent.v1.CatalogProvider> map =
+          instance.getProvidersMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    /**
+     * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
+     */
+    public Builder putProviders(
+        java.lang.String key,
+        agent.v1.CatalogProvider value) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Objects.requireNonNull(value);
+      copyOnWrite();
+      instance.getMutableProvidersMap().put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
+     */
+    public Builder putAllProviders(
+        java.util.Map<java.lang.String, agent.v1.CatalogProvider> values) {
+      copyOnWrite();
+      instance.getMutableProvidersMap().putAll(values);
       return this;
     }
 
@@ -730,10 +327,10 @@ public  final class ListProvidersCatalogResponse extends
       case BUILD_MESSAGE_INFO: {
           java.lang.Object[] objects = new java.lang.Object[] {
             "providers_",
-            agent.v1.ListProvidersCatalogResponse.ProvidersEntry.class,
+            ProvidersDefaultEntryHolder.defaultEntry,
           };
           java.lang.String info =
-              "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b";
+              "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u00012";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

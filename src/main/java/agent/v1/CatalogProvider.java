@@ -20,411 +20,7 @@ public  final class CatalogProvider extends
     api_ = "";
     npm_ = "";
     env_ = emptyProtobufList();
-    models_ = emptyProtobufList();
   }
-  public interface ModelsEntryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:agent.v1.CatalogProvider.ModelsEntry)
-      com.google.protobuf.MessageLiteOrBuilder {
-
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The key.
-     */
-    java.lang.String getKey();
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The bytes for key.
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     * @return Whether the value field is set.
-     */
-    boolean hasValue();
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     * @return The value.
-     */
-    com.google.protobuf.Value getValue();
-  }
-  /**
-   * Protobuf type {@code agent.v1.CatalogProvider.ModelsEntry}
-   */
-  public  static final class ModelsEntry extends
-      com.google.protobuf.GeneratedMessageLite<
-          ModelsEntry, ModelsEntry.Builder> implements
-      // @@protoc_insertion_point(message_implements:agent.v1.CatalogProvider.ModelsEntry)
-      ModelsEntryOrBuilder {
-    private ModelsEntry() {
-      key_ = "";
-    }
-    private int bitField0_;
-    public static final int KEY_FIELD_NUMBER = 1;
-    private java.lang.String key_;
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The key.
-     */
-    @java.lang.Override
-    public java.lang.String getKey() {
-      return key_;
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The bytes for key.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(key_);
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @param value The key to set.
-     */
-    private void setKey(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-
-      key_ = value;
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     */
-    private void clearKey() {
-
-      key_ = getDefaultInstance().getKey();
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @param value The bytes for key to set.
-     */
-    private void setKeyBytes(
-        com.google.protobuf.ByteString value) {
-      checkByteStringIsUtf8(value);
-      key_ = value.toStringUtf8();
-
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 2;
-    private com.google.protobuf.Value value_;
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     */
-    @java.lang.Override
-    public boolean hasValue() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.Value getValue() {
-      return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
-    }
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     */
-    private void setValue(com.google.protobuf.Value value) {
-      java.util.Objects.requireNonNull(value);
-      value_ = value;
-      bitField0_ |= 0x00000001;
-    }
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     */
-    @java.lang.SuppressWarnings("ReferenceEquality")
-    private void mergeValue(com.google.protobuf.Value value) {
-      java.util.Objects.requireNonNull(value);
-      if (value_ != null &&
-          value_ != com.google.protobuf.Value.getDefaultInstance()) {
-        value_ =
-          com.google.protobuf.Value.newBuilder(value_).mergeFrom(value).buildPartial();
-      } else {
-        value_ = value;
-      }
-      bitField0_ |= 0x00000001;
-    }
-    /**
-     * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-     */
-    private void clearValue() {
-      value_ = null;
-      bitField0_ = (bitField0_ & ~0x00000001);
-    }
-
-    public static agent.v1.CatalogProvider.ModelsEntry parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.CatalogProvider.ModelsEntry parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.CatalogProvider.ModelsEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.CatalogProvider.ModelsEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.CatalogProvider.ModelsEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.CatalogProvider.ModelsEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.CatalogProvider.ModelsEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
-    }
-    public static agent.v1.CatalogProvider.ModelsEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-
-    public static agent.v1.CatalogProvider.ModelsEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
-    }
-
-    public static agent.v1.CatalogProvider.ModelsEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-    public static agent.v1.CatalogProvider.ModelsEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
-    }
-    public static agent.v1.CatalogProvider.ModelsEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
-    }
-    public static Builder newBuilder(agent.v1.CatalogProvider.ModelsEntry prototype) {
-      return DEFAULT_INSTANCE.createBuilder(prototype);
-    }
-
-    /**
-     * Protobuf type {@code agent.v1.CatalogProvider.ModelsEntry}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          agent.v1.CatalogProvider.ModelsEntry, Builder> implements
-        // @@protoc_insertion_point(builder_implements:agent.v1.CatalogProvider.ModelsEntry)
-        agent.v1.CatalogProvider.ModelsEntryOrBuilder {
-      // Construct using agent.v1.CatalogProvider.ModelsEntry.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
-      }
-
-
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return The key.
-       */
-      @java.lang.Override
-      public java.lang.String getKey() {
-        return instance.getKey();
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return The bytes for key.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        return instance.getKeyBytes();
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @param value The key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKey(
-          java.lang.String value) {
-        copyOnWrite();
-        instance.setKey(value);
-        return this;
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKey() {
-        copyOnWrite();
-        instance.clearKey();
-        return this;
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @param value The bytes for key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setKeyBytes(value);
-        return this;
-      }
-
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      @java.lang.Override
-      public boolean hasValue() {
-        return instance.hasValue();
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      @java.lang.Override
-      public com.google.protobuf.Value getValue() {
-        return instance.getValue();
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      public Builder setValue(com.google.protobuf.Value value) {
-        copyOnWrite();
-        instance.setValue(value);
-        return this;
-        }
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      public Builder setValue(
-          com.google.protobuf.Value.Builder builderForValue) {
-        copyOnWrite();
-        instance.setValue(builderForValue.build());
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      public Builder mergeValue(com.google.protobuf.Value value) {
-        copyOnWrite();
-        instance.mergeValue(value);
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2 [json_name = "value"];</code>
-       */
-      public Builder clearValue() {  copyOnWrite();
-        instance.clearValue();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:agent.v1.CatalogProvider.ModelsEntry)
-    }
-    @java.lang.Override
-    @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new agent.v1.CatalogProvider.ModelsEntry();
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case BUILD_MESSAGE_INFO: {
-            java.lang.Object[] objects = new java.lang.Object[] {
-              "bitField0_",
-              "key_",
-              "value_",
-            };
-            java.lang.String info =
-                "\u0000\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u1009" +
-                "\u0000";
-            return newMessageInfo(DEFAULT_INSTANCE, info, objects);
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          com.google.protobuf.Parser<agent.v1.CatalogProvider.ModelsEntry> parser = PARSER;
-          if (parser == null) {
-            synchronized (agent.v1.CatalogProvider.ModelsEntry.class) {
-              parser = PARSER;
-              if (parser == null) {
-                parser =
-                    new DefaultInstanceBasedParser<agent.v1.CatalogProvider.ModelsEntry>(
-                        DEFAULT_INSTANCE);
-                PARSER = parser;
-              }
-            }
-          }
-          return parser;
-        }
-        case GET_MEMOIZED_IS_INITIALIZED: {
-          return (byte) 1;
-        }
-        // SET_MEMOIZED_IS_INITIALIZED is never called for this message.
-        // So it can do anything. Combine with default case for smaller codegen.
-        case SET_MEMOIZED_IS_INITIALIZED:
-      }
-      // Should never happen. Generates tight code to throw an exception.
-      throw null;
-    }
-
-
-    // @@protoc_insertion_point(class_scope:agent.v1.CatalogProvider.ModelsEntry)
-    private static final agent.v1.CatalogProvider.ModelsEntry DEFAULT_INSTANCE;
-    static {
-      ModelsEntry defaultInstance = new ModelsEntry();
-      // New instances are implicitly immutable so no need to make
-      // immutable.
-      DEFAULT_INSTANCE = defaultInstance;
-      com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
-        ModelsEntry.class, defaultInstance);
-    }
-
-    public static agent.v1.CatalogProvider.ModelsEntry getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static volatile com.google.protobuf.Parser<ModelsEntry> PARSER;
-
-    public static com.google.protobuf.Parser<ModelsEntry> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
-    }
-  }
-
   public static final int ID_FIELD_NUMBER = 1;
   private java.lang.String id_;
   /**
@@ -707,97 +303,100 @@ public  final class CatalogProvider extends
   }
 
   public static final int MODELS_FIELD_NUMBER = 6;
-  private com.google.protobuf.Internal.ProtobufList<agent.v1.CatalogProvider.ModelsEntry> models_;
-  /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<agent.v1.CatalogProvider.ModelsEntry> getModelsList() {
+  private static final class ModelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntryLite<
+        java.lang.String, com.google.protobuf.Value> defaultEntry =
+            com.google.protobuf.MapEntryLite
+            .<java.lang.String, com.google.protobuf.Value>newDefaultInstance(
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                com.google.protobuf.Value.getDefaultInstance());
+  }
+  private com.google.protobuf.MapFieldLite<
+      java.lang.String, com.google.protobuf.Value> models_ =
+          com.google.protobuf.MapFieldLite.emptyMapField();
+  private com.google.protobuf.MapFieldLite<java.lang.String, com.google.protobuf.Value>
+  internalGetModels() {
     return models_;
   }
-  /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-   */
-  public java.util.List<? extends agent.v1.CatalogProvider.ModelsEntryOrBuilder> 
-      getModelsOrBuilderList() {
+  private com.google.protobuf.MapFieldLite<java.lang.String, com.google.protobuf.Value>
+  internalGetMutableModels() {
+    if (!models_.isMutable()) {
+      models_ = models_.mutableCopy();
+    }
     return models_;
   }
-  /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-   */
   @java.lang.Override
-  public int getModelsCount() {
-    return models_.size();
-  }
-  /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-   */
-  @java.lang.Override
-  public agent.v1.CatalogProvider.ModelsEntry getModels(int index) {
-    return models_.get(index);
-  }
-  /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-   */
-  public agent.v1.CatalogProvider.ModelsEntryOrBuilder getModelsOrBuilder(
-      int index) {
-    return models_.get(index);
-  }
-  private void ensureModelsIsMutable() {
-    com.google.protobuf.Internal.ProtobufList<agent.v1.CatalogProvider.ModelsEntry> tmp = models_;
-    if (!tmp.isModifiable()) {
-      models_ =
-          com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
-     }
-  }
 
-  /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-   */
-  private void setModels(
-      int index, agent.v1.CatalogProvider.ModelsEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureModelsIsMutable();
-    models_.set(index, value);
+  public int getModelsCount() {
+    return internalGetModels().size();
   }
   /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
    */
-  private void addModels(agent.v1.CatalogProvider.ModelsEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureModelsIsMutable();
-    models_.add(value);
+  @java.lang.Override
+
+  public boolean containsModels(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key);
+    return internalGetModels().containsKey(key);
   }
   /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
+   * Use {@link #getModelsMap()} instead.
    */
-  private void addModels(
-      int index, agent.v1.CatalogProvider.ModelsEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureModelsIsMutable();
-    models_.add(index, value);
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.protobuf.Value> getModels() {
+    return getModelsMap();
   }
   /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
    */
-  private void addAllModels(
-      java.lang.Iterable<? extends agent.v1.CatalogProvider.ModelsEntry> values) {
-    ensureModelsIsMutable();
-    com.google.protobuf.AbstractMessageLite.addAll(
-        values, models_);
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, com.google.protobuf.Value> getModelsMap() {
+    return java.util.Collections.unmodifiableMap(
+        internalGetModels());
   }
   /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
    */
-  private void clearModels() {
-    models_ = emptyProtobufList();
+  @java.lang.Override
+
+  public /* nullable */
+com.google.protobuf.Value getModelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+com.google.protobuf.Value defaultValue) {
+    java.util.Objects.requireNonNull(key);
+    java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+        internalGetModels();
+    com.google.protobuf.Value v = map.get(key);
+    return v != null ? v : defaultValue;
   }
   /**
-   * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
    */
-  private void removeModels(int index) {
-    ensureModelsIsMutable();
-    models_.remove(index);
+  @java.lang.Override
+
+  public com.google.protobuf.Value getModelsOrThrow(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key);
+    java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+        internalGetModels();
+    com.google.protobuf.Value v = map.get(key);
+    if (v == null) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return v;
+  }
+  /**
+   * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
+   */
+  private java.util.Map<java.lang.String, com.google.protobuf.Value>
+  getMutableModelsMap() {
+    return internalGetMutableModels();
   }
 
   public static agent.v1.CatalogProvider parseFrom(
@@ -1185,105 +784,103 @@ public  final class CatalogProvider extends
       return this;
     }
 
-    /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-     */
     @java.lang.Override
-    public java.util.List<agent.v1.CatalogProvider.ModelsEntry> getModelsList() {
-      return java.util.Collections.unmodifiableList(
-          instance.getModelsList());
-    }
-    /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-     */
-    @java.lang.Override
+
     public int getModelsCount() {
-      return instance.getModelsCount();
-    }/**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
+      return instance.getModelsMap().size();
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
      */
     @java.lang.Override
-    public agent.v1.CatalogProvider.ModelsEntry getModels(int index) {
-      return instance.getModels(index);
+
+    public boolean containsModels(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
+      return instance.getModelsMap().containsKey(key);
     }
-    /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-     */
-    public Builder setModels(
-        int index, agent.v1.CatalogProvider.ModelsEntry value) {
-      copyOnWrite();
-      instance.setModels(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-     */
-    public Builder setModels(
-        int index, agent.v1.CatalogProvider.ModelsEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.setModels(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-     */
-    public Builder addModels(agent.v1.CatalogProvider.ModelsEntry value) {
-      copyOnWrite();
-      instance.addModels(value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-     */
-    public Builder addModels(
-        int index, agent.v1.CatalogProvider.ModelsEntry value) {
-      copyOnWrite();
-      instance.addModels(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-     */
-    public Builder addModels(
-        agent.v1.CatalogProvider.ModelsEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.addModels(builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-     */
-    public Builder addModels(
-        int index, agent.v1.CatalogProvider.ModelsEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.addModels(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-     */
-    public Builder addAllModels(
-        java.lang.Iterable<? extends agent.v1.CatalogProvider.ModelsEntry> values) {
-      copyOnWrite();
-      instance.addAllModels(values);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
-     */
+
     public Builder clearModels() {
       copyOnWrite();
-      instance.clearModels();
+      instance.getMutableModelsMap().clear();
       return this;
     }
     /**
-     * <code>repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
      */
-    public Builder removeModels(int index) {
+
+    public Builder removeModels(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
       copyOnWrite();
-      instance.removeModels(index);
+      instance.getMutableModelsMap().remove(key);
+      return this;
+    }
+    /**
+     * Use {@link #getModelsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.protobuf.Value> getModels() {
+      return getModelsMap();
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.protobuf.Value> getModelsMap() {
+      return java.util.Collections.unmodifiableMap(
+          instance.getModelsMap());
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
+     */
+    @java.lang.Override
+
+    public /* nullable */
+com.google.protobuf.Value getModelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+com.google.protobuf.Value defaultValue) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+          instance.getModelsMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
+     */
+    @java.lang.Override
+
+    public com.google.protobuf.Value getModelsOrThrow(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+          instance.getModelsMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
+     */
+    public Builder putModels(
+        java.lang.String key,
+        com.google.protobuf.Value value) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Objects.requireNonNull(value);
+      copyOnWrite();
+      instance.getMutableModelsMap().put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Value&gt; models = 6 [json_name = "models"];</code>
+     */
+    public Builder putAllModels(
+        java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
+      copyOnWrite();
+      instance.getMutableModelsMap().putAll(values);
       return this;
     }
 
@@ -1309,11 +906,11 @@ public  final class CatalogProvider extends
             "npm_",
             "env_",
             "models_",
-            agent.v1.CatalogProvider.ModelsEntry.class,
+            ModelsDefaultEntryHolder.defaultEntry,
           };
           java.lang.String info =
-              "\u0000\u0006\u0000\u0000\u0001\u0006\u0006\u0000\u0002\u0000\u0001\u0208\u0002\u0208" +
-              "\u0003\u0208\u0004\u0208\u0005\u021a\u0006\u001b";
+              "\u0000\u0006\u0000\u0000\u0001\u0006\u0006\u0001\u0001\u0000\u0001\u0208\u0002\u0208" +
+              "\u0003\u0208\u0004\u0208\u0005\u021a\u00062";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

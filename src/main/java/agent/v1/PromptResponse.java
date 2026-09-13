@@ -16,414 +16,8 @@ public  final class PromptResponse extends
     PromptResponseOrBuilder {
   private PromptResponse() {
     event_ = "";
-    params_ = emptyProtobufList();
     eid_ = "";
   }
-  public interface ParamsEntryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:agent.v1.PromptResponse.ParamsEntry)
-      com.google.protobuf.MessageLiteOrBuilder {
-
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The key.
-     */
-    java.lang.String getKey();
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The bytes for key.
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
-     */
-    java.lang.String getValue();
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
-     */
-    com.google.protobuf.ByteString
-        getValueBytes();
-  }
-  /**
-   * Protobuf type {@code agent.v1.PromptResponse.ParamsEntry}
-   */
-  public  static final class ParamsEntry extends
-      com.google.protobuf.GeneratedMessageLite<
-          ParamsEntry, ParamsEntry.Builder> implements
-      // @@protoc_insertion_point(message_implements:agent.v1.PromptResponse.ParamsEntry)
-      ParamsEntryOrBuilder {
-    private ParamsEntry() {
-      key_ = "";
-      value_ = "";
-    }
-    public static final int KEY_FIELD_NUMBER = 1;
-    private java.lang.String key_;
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The key.
-     */
-    @java.lang.Override
-    public java.lang.String getKey() {
-      return key_;
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The bytes for key.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(key_);
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @param value The key to set.
-     */
-    private void setKey(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-
-      key_ = value;
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     */
-    private void clearKey() {
-
-      key_ = getDefaultInstance().getKey();
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @param value The bytes for key to set.
-     */
-    private void setKeyBytes(
-        com.google.protobuf.ByteString value) {
-      checkByteStringIsUtf8(value);
-      key_ = value.toStringUtf8();
-
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 2;
-    private java.lang.String value_;
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
-     */
-    @java.lang.Override
-    public java.lang.String getValue() {
-      return value_;
-    }
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getValueBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(value_);
-    }
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @param value The value to set.
-     */
-    private void setValue(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-
-      value_ = value;
-    }
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     */
-    private void clearValue() {
-
-      value_ = getDefaultInstance().getValue();
-    }
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @param value The bytes for value to set.
-     */
-    private void setValueBytes(
-        com.google.protobuf.ByteString value) {
-      checkByteStringIsUtf8(value);
-      value_ = value.toStringUtf8();
-
-    }
-
-    public static agent.v1.PromptResponse.ParamsEntry parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.PromptResponse.ParamsEntry parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.PromptResponse.ParamsEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.PromptResponse.ParamsEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.PromptResponse.ParamsEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.PromptResponse.ParamsEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.PromptResponse.ParamsEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
-    }
-    public static agent.v1.PromptResponse.ParamsEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-
-    public static agent.v1.PromptResponse.ParamsEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
-    }
-
-    public static agent.v1.PromptResponse.ParamsEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-    public static agent.v1.PromptResponse.ParamsEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
-    }
-    public static agent.v1.PromptResponse.ParamsEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
-    }
-    public static Builder newBuilder(agent.v1.PromptResponse.ParamsEntry prototype) {
-      return DEFAULT_INSTANCE.createBuilder(prototype);
-    }
-
-    /**
-     * Protobuf type {@code agent.v1.PromptResponse.ParamsEntry}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          agent.v1.PromptResponse.ParamsEntry, Builder> implements
-        // @@protoc_insertion_point(builder_implements:agent.v1.PromptResponse.ParamsEntry)
-        agent.v1.PromptResponse.ParamsEntryOrBuilder {
-      // Construct using agent.v1.PromptResponse.ParamsEntry.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
-      }
-
-
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return The key.
-       */
-      @java.lang.Override
-      public java.lang.String getKey() {
-        return instance.getKey();
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return The bytes for key.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        return instance.getKeyBytes();
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @param value The key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKey(
-          java.lang.String value) {
-        copyOnWrite();
-        instance.setKey(value);
-        return this;
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKey() {
-        copyOnWrite();
-        instance.clearKey();
-        return this;
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @param value The bytes for key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setKeyBytes(value);
-        return this;
-      }
-
-      /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return The value.
-       */
-      @java.lang.Override
-      public java.lang.String getValue() {
-        return instance.getValue();
-      }
-      /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return The bytes for value.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getValueBytes() {
-        return instance.getValueBytes();
-      }
-      /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValue(
-          java.lang.String value) {
-        copyOnWrite();
-        instance.setValue(value);
-        return this;
-      }
-      /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearValue() {
-        copyOnWrite();
-        instance.clearValue();
-        return this;
-      }
-      /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @param value The bytes for value to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValueBytes(
-          com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setValueBytes(value);
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:agent.v1.PromptResponse.ParamsEntry)
-    }
-    @java.lang.Override
-    @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new agent.v1.PromptResponse.ParamsEntry();
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case BUILD_MESSAGE_INFO: {
-            java.lang.Object[] objects = new java.lang.Object[] {
-              "key_",
-              "value_",
-            };
-            java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
-            return newMessageInfo(DEFAULT_INSTANCE, info, objects);
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          com.google.protobuf.Parser<agent.v1.PromptResponse.ParamsEntry> parser = PARSER;
-          if (parser == null) {
-            synchronized (agent.v1.PromptResponse.ParamsEntry.class) {
-              parser = PARSER;
-              if (parser == null) {
-                parser =
-                    new DefaultInstanceBasedParser<agent.v1.PromptResponse.ParamsEntry>(
-                        DEFAULT_INSTANCE);
-                PARSER = parser;
-              }
-            }
-          }
-          return parser;
-        }
-        case GET_MEMOIZED_IS_INITIALIZED: {
-          return (byte) 1;
-        }
-        // SET_MEMOIZED_IS_INITIALIZED is never called for this message.
-        // So it can do anything. Combine with default case for smaller codegen.
-        case SET_MEMOIZED_IS_INITIALIZED:
-      }
-      // Should never happen. Generates tight code to throw an exception.
-      throw null;
-    }
-
-
-    // @@protoc_insertion_point(class_scope:agent.v1.PromptResponse.ParamsEntry)
-    private static final agent.v1.PromptResponse.ParamsEntry DEFAULT_INSTANCE;
-    static {
-      ParamsEntry defaultInstance = new ParamsEntry();
-      // New instances are implicitly immutable so no need to make
-      // immutable.
-      DEFAULT_INSTANCE = defaultInstance;
-      com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
-        ParamsEntry.class, defaultInstance);
-    }
-
-    public static agent.v1.PromptResponse.ParamsEntry getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static volatile com.google.protobuf.Parser<ParamsEntry> PARSER;
-
-    public static com.google.protobuf.Parser<ParamsEntry> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
-    }
-  }
-
   public static final int EVENT_FIELD_NUMBER = 1;
   private java.lang.String event_;
   /**
@@ -472,97 +66,100 @@ public  final class PromptResponse extends
   }
 
   public static final int PARAMS_FIELD_NUMBER = 2;
-  private com.google.protobuf.Internal.ProtobufList<agent.v1.PromptResponse.ParamsEntry> params_;
-  /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<agent.v1.PromptResponse.ParamsEntry> getParamsList() {
+  private static final class ParamsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntryLite<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntryLite
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapFieldLite<
+      java.lang.String, java.lang.String> params_ =
+          com.google.protobuf.MapFieldLite.emptyMapField();
+  private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.String>
+  internalGetParams() {
     return params_;
   }
-  /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-   */
-  public java.util.List<? extends agent.v1.PromptResponse.ParamsEntryOrBuilder> 
-      getParamsOrBuilderList() {
+  private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.String>
+  internalGetMutableParams() {
+    if (!params_.isMutable()) {
+      params_ = params_.mutableCopy();
+    }
     return params_;
   }
-  /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-   */
   @java.lang.Override
-  public int getParamsCount() {
-    return params_.size();
-  }
-  /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-   */
-  @java.lang.Override
-  public agent.v1.PromptResponse.ParamsEntry getParams(int index) {
-    return params_.get(index);
-  }
-  /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-   */
-  public agent.v1.PromptResponse.ParamsEntryOrBuilder getParamsOrBuilder(
-      int index) {
-    return params_.get(index);
-  }
-  private void ensureParamsIsMutable() {
-    com.google.protobuf.Internal.ProtobufList<agent.v1.PromptResponse.ParamsEntry> tmp = params_;
-    if (!tmp.isModifiable()) {
-      params_ =
-          com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
-     }
-  }
 
-  /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-   */
-  private void setParams(
-      int index, agent.v1.PromptResponse.ParamsEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureParamsIsMutable();
-    params_.set(index, value);
+  public int getParamsCount() {
+    return internalGetParams().size();
   }
   /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
+   * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
    */
-  private void addParams(agent.v1.PromptResponse.ParamsEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureParamsIsMutable();
-    params_.add(value);
+  @java.lang.Override
+
+  public boolean containsParams(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key);
+    return internalGetParams().containsKey(key);
   }
   /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
+   * Use {@link #getParamsMap()} instead.
    */
-  private void addParams(
-      int index, agent.v1.PromptResponse.ParamsEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureParamsIsMutable();
-    params_.add(index, value);
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getParams() {
+    return getParamsMap();
   }
   /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
+   * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
    */
-  private void addAllParams(
-      java.lang.Iterable<? extends agent.v1.PromptResponse.ParamsEntry> values) {
-    ensureParamsIsMutable();
-    com.google.protobuf.AbstractMessageLite.addAll(
-        values, params_);
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
+    return java.util.Collections.unmodifiableMap(
+        internalGetParams());
   }
   /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
+   * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
    */
-  private void clearParams() {
-    params_ = emptyProtobufList();
+  @java.lang.Override
+
+  public /* nullable */
+java.lang.String getParamsOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    java.util.Objects.requireNonNull(key);
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetParams();
+    java.lang.String v = map.get(key);
+    return v != null ? v : defaultValue;
   }
   /**
-   * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
+   * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
    */
-  private void removeParams(int index) {
-    ensureParamsIsMutable();
-    params_.remove(index);
+  @java.lang.Override
+
+  public java.lang.String getParamsOrThrow(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key);
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetParams();
+    java.lang.String v = map.get(key);
+    if (v == null) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return v;
+  }
+  /**
+   * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
+   */
+  private java.util.Map<java.lang.String, java.lang.String>
+  getMutableParamsMap() {
+    return internalGetMutableParams();
   }
 
   public static final int EID_FIELD_NUMBER = 3;
@@ -758,105 +355,103 @@ public  final class PromptResponse extends
       return this;
     }
 
-    /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-     */
     @java.lang.Override
-    public java.util.List<agent.v1.PromptResponse.ParamsEntry> getParamsList() {
-      return java.util.Collections.unmodifiableList(
-          instance.getParamsList());
-    }
-    /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-     */
-    @java.lang.Override
+
     public int getParamsCount() {
-      return instance.getParamsCount();
-    }/**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
+      return instance.getParamsMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
      */
     @java.lang.Override
-    public agent.v1.PromptResponse.ParamsEntry getParams(int index) {
-      return instance.getParams(index);
+
+    public boolean containsParams(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
+      return instance.getParamsMap().containsKey(key);
     }
-    /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-     */
-    public Builder setParams(
-        int index, agent.v1.PromptResponse.ParamsEntry value) {
-      copyOnWrite();
-      instance.setParams(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-     */
-    public Builder setParams(
-        int index, agent.v1.PromptResponse.ParamsEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.setParams(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-     */
-    public Builder addParams(agent.v1.PromptResponse.ParamsEntry value) {
-      copyOnWrite();
-      instance.addParams(value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-     */
-    public Builder addParams(
-        int index, agent.v1.PromptResponse.ParamsEntry value) {
-      copyOnWrite();
-      instance.addParams(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-     */
-    public Builder addParams(
-        agent.v1.PromptResponse.ParamsEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.addParams(builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-     */
-    public Builder addParams(
-        int index, agent.v1.PromptResponse.ParamsEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.addParams(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-     */
-    public Builder addAllParams(
-        java.lang.Iterable<? extends agent.v1.PromptResponse.ParamsEntry> values) {
-      copyOnWrite();
-      instance.addAllParams(values);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
-     */
+
     public Builder clearParams() {
       copyOnWrite();
-      instance.clearParams();
+      instance.getMutableParamsMap().clear();
       return this;
     }
     /**
-     * <code>repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];</code>
+     * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
      */
-    public Builder removeParams(int index) {
+
+    public Builder removeParams(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
       copyOnWrite();
-      instance.removeParams(index);
+      instance.getMutableParamsMap().remove(key);
+      return this;
+    }
+    /**
+     * Use {@link #getParamsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getParams() {
+      return getParamsMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
+      return java.util.Collections.unmodifiableMap(
+          instance.getParamsMap());
+    }
+    /**
+     * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
+     */
+    @java.lang.Override
+
+    public /* nullable */
+java.lang.String getParamsOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Map<java.lang.String, java.lang.String> map =
+          instance.getParamsMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getParamsOrThrow(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Map<java.lang.String, java.lang.String> map =
+          instance.getParamsMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    /**
+     * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
+     */
+    public Builder putParams(
+        java.lang.String key,
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Objects.requireNonNull(value);
+      copyOnWrite();
+      instance.getMutableParamsMap().put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; params = 2 [json_name = "params"];</code>
+     */
+    public Builder putAllParams(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      copyOnWrite();
+      instance.getMutableParamsMap().putAll(values);
       return this;
     }
 
@@ -927,12 +522,12 @@ public  final class PromptResponse extends
           java.lang.Object[] objects = new java.lang.Object[] {
             "event_",
             "params_",
-            agent.v1.PromptResponse.ParamsEntry.class,
+            ParamsDefaultEntryHolder.defaultEntry,
             "eid_",
           };
           java.lang.String info =
-              "\u0000\u0003\u0000\u0000\u0001\u0003\u0003\u0000\u0001\u0000\u0001\u0208\u0002\u001b" +
-              "\u0003\u0208";
+              "\u0000\u0003\u0000\u0000\u0001\u0003\u0003\u0001\u0000\u0000\u0001\u0208\u00022\u0003" +
+              "\u0208";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

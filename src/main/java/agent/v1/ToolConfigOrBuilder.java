@@ -11,16 +11,38 @@ public interface ToolConfigOrBuilder extends
     com.google.protobuf.MessageLiteOrBuilder {
 
   /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-   */
-  java.util.List<agent.v1.ToolConfig.ValuesEntry> 
-      getValuesList();
-  /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
-   */
-  agent.v1.ToolConfig.ValuesEntry getValues(int index);
-  /**
-   * <code>repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
    */
   int getValuesCount();
+  /**
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
+   */
+  boolean containsValues(
+      java.lang.String key);
+  /**
+   * Use {@link #getValuesMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.protobuf.Value>
+  getValues();
+  /**
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
+   */
+  java.util.Map<java.lang.String, com.google.protobuf.Value>
+  getValuesMap();
+  /**
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
+   */
+
+  /* nullable */
+com.google.protobuf.Value getValuesOrDefault(
+      java.lang.String key,
+      /* nullable */
+com.google.protobuf.Value defaultValue);
+  /**
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1 [json_name = "values"];</code>
+   */
+
+  com.google.protobuf.Value getValuesOrThrow(
+      java.lang.String key);
 }

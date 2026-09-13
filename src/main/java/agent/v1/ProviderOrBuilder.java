@@ -59,18 +59,40 @@ public interface ProviderOrBuilder extends
       getApiKeyBytes();
 
   /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-   */
-  java.util.List<agent.v1.Provider.HeadersEntry> 
-      getHeadersList();
-  /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-   */
-  agent.v1.Provider.HeadersEntry getHeaders(int index);
-  /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
+   * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
    */
   int getHeadersCount();
+  /**
+   * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
+   */
+  boolean containsHeaders(
+      java.lang.String key);
+  /**
+   * Use {@link #getHeadersMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getHeaders();
+  /**
+   * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getHeadersMap();
+  /**
+   * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
+   */
+
+  /* nullable */
+java.lang.String getHeadersOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
+   */
+
+  java.lang.String getHeadersOrThrow(
+      java.lang.String key);
 
   /**
    * <code>repeated .agent.v1.ProviderModel models = 6 [json_name = "models"];</code>

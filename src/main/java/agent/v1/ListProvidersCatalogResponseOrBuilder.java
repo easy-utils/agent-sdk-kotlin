@@ -11,16 +11,38 @@ public interface ListProvidersCatalogResponseOrBuilder extends
     com.google.protobuf.MessageLiteOrBuilder {
 
   /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-   */
-  java.util.List<agent.v1.ListProvidersCatalogResponse.ProvidersEntry> 
-      getProvidersList();
-  /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
-   */
-  agent.v1.ListProvidersCatalogResponse.ProvidersEntry getProviders(int index);
-  /**
-   * <code>repeated .agent.v1.ListProvidersCatalogResponse.ProvidersEntry providers = 1 [json_name = "providers"];</code>
+   * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
    */
   int getProvidersCount();
+  /**
+   * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
+   */
+  boolean containsProviders(
+      java.lang.String key);
+  /**
+   * Use {@link #getProvidersMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, agent.v1.CatalogProvider>
+  getProviders();
+  /**
+   * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
+   */
+  java.util.Map<java.lang.String, agent.v1.CatalogProvider>
+  getProvidersMap();
+  /**
+   * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
+   */
+
+  /* nullable */
+agent.v1.CatalogProvider getProvidersOrDefault(
+      java.lang.String key,
+      /* nullable */
+agent.v1.CatalogProvider defaultValue);
+  /**
+   * <code>map&lt;string, .agent.v1.CatalogProvider&gt; providers = 1 [json_name = "providers"];</code>
+   */
+
+  agent.v1.CatalogProvider getProvidersOrThrow(
+      java.lang.String key);
 }

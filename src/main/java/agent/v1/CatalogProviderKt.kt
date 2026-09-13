@@ -174,144 +174,61 @@ public object CatalogProviderKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ModelsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];`
+     * `map<string, .google.protobuf.Value> models = 6 [json_name = "models"];`
      */
-     public val models: com.google.protobuf.kotlin.DslList<agent.v1.CatalogProvider.ModelsEntry, ModelsProxy>
+     public val models: com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ModelsProxy>
       @kotlin.jvm.JvmSynthetic
-  get() = com.google.protobuf.kotlin.DslList(
-        _builder.modelsList
+@kotlin.jvm.JvmName("getModelsMap")
+      get() = com.google.protobuf.kotlin.DslMap(
+        _builder.modelsMap
       )
     /**
-     * `repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];`
-     * @param value The models to add.
+     * `map<string, .google.protobuf.Value> models = 6 [json_name = "models"];`
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addModels")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.CatalogProvider.ModelsEntry, ModelsProxy>.add(value: agent.v1.CatalogProvider.ModelsEntry) {
-      _builder.addModels(value)
-    }
+    @kotlin.jvm.JvmName("putModels")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ModelsProxy>
+      .put(key: kotlin.String, value: com.google.protobuf.Value) {
+         _builder.putModels(key, value)
+       }
     /**
-     * `repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];`
-     * @param value The models to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignModels")
-    @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<agent.v1.CatalogProvider.ModelsEntry, ModelsProxy>.plusAssign(value: agent.v1.CatalogProvider.ModelsEntry) {
-      add(value)
-    }
-    /**
-     * `repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];`
-     * @param values The models to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllModels")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.CatalogProvider.ModelsEntry, ModelsProxy>.addAll(values: kotlin.collections.Iterable<agent.v1.CatalogProvider.ModelsEntry>) {
-      _builder.addAllModels(values)
-    }
-    /**
-     * `repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];`
-     * @param values The models to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllModels")
-    @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<agent.v1.CatalogProvider.ModelsEntry, ModelsProxy>.plusAssign(values: kotlin.collections.Iterable<agent.v1.CatalogProvider.ModelsEntry>) {
-      addAll(values)
-    }
-    /**
-     * `repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];`
-     * @param index The index to set the value at.
-     * @param value The models to set.
+     * `map<string, .google.protobuf.Value> models = 6 [json_name = "models"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setModels")
-    public operator fun com.google.protobuf.kotlin.DslList<agent.v1.CatalogProvider.ModelsEntry, ModelsProxy>.set(index: kotlin.Int, value: agent.v1.CatalogProvider.ModelsEntry) {
-      _builder.setModels(index, value)
-    }
+    @Suppress("NOTHING_TO_INLINE")
+    public inline operator fun com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ModelsProxy>
+      .set(key: kotlin.String, value: com.google.protobuf.Value) {
+         put(key, value)
+       }
     /**
-     * `repeated .agent.v1.CatalogProvider.ModelsEntry models = 6 [json_name = "models"];`
+     * `map<string, .google.protobuf.Value> models = 6 [json_name = "models"];`
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("removeModels")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ModelsProxy>
+      .remove(key: kotlin.String) {
+         _builder.removeModels(key)
+       }
+    /**
+     * `map<string, .google.protobuf.Value> models = 6 [json_name = "models"];`
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("putAllModels")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ModelsProxy>
+      .putAll(map: kotlin.collections.Map<kotlin.String, com.google.protobuf.Value>) {
+         _builder.putAllModels(map)
+       }
+    /**
+     * `map<string, .google.protobuf.Value> models = 6 [json_name = "models"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearModels")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.CatalogProvider.ModelsEntry, ModelsProxy>.clear() {
-      _builder.clearModels()
-    }
-  }
-  @kotlin.jvm.JvmName("-initializemodelsEntry")
-  public inline fun modelsEntry(block: agent.v1.CatalogProviderKt.ModelsEntryKt.Dsl.() -> kotlin.Unit): agent.v1.CatalogProvider.ModelsEntry =
-    agent.v1.CatalogProviderKt.ModelsEntryKt.Dsl._create(agent.v1.CatalogProvider.ModelsEntry.newBuilder()).apply { block() }._build()
-  /**
-   * Protobuf type `agent.v1.CatalogProvider.ModelsEntry`
-   */
-  public object ModelsEntryKt {
-    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    @com.google.protobuf.kotlin.ProtoDslMarker
-    public class Dsl private constructor(
-      private val _builder: agent.v1.CatalogProvider.ModelsEntry.Builder
-    ) {
-      public companion object {
-        @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-        internal fun _create(builder: agent.v1.CatalogProvider.ModelsEntry.Builder): Dsl = Dsl(builder)
-      }
-
-      @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-      internal fun _build(): agent.v1.CatalogProvider.ModelsEntry = _builder.build()
-
-      /**
-       * `string key = 1 [json_name = "key"];`
-       */
-      public var key: kotlin.String
-        @kotlin.jvm.JvmName("getKey")
-          get() = _builder.key
-        @kotlin.jvm.JvmName("setKey")
-          set(value) {
-          _builder.key = value
-        }
-      /**
-       * `string key = 1 [json_name = "key"];`
-       */
-      public fun clearKey() {
-        _builder.clearKey()
-      }
-
-      /**
-       * `.google.protobuf.Value value = 2 [json_name = "value"];`
-       */
-      public var value: com.google.protobuf.Value
-        @kotlin.jvm.JvmName("getValue")
-          get() = _builder.value
-        @kotlin.jvm.JvmName("setValue")
-          set(value) {
-          _builder.value = value
-        }
-      /**
-       * `.google.protobuf.Value value = 2 [json_name = "value"];`
-       */
-      public fun clearValue() {
-        _builder.clearValue()
-      }
-      /**
-       * `.google.protobuf.Value value = 2 [json_name = "value"];`
-       * @return Whether the value field is set.
-       */
-      public fun hasValue(): kotlin.Boolean {
-        return _builder.hasValue()
-      }
-
-      public val ModelsEntryKt.Dsl.valueOrNull: com.google.protobuf.Value?
-        get() = _builder.valueOrNull
-    }
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ModelsProxy>
+      .clear() {
+         _builder.clearModels()
+       }
   }
 }
 public inline fun agent.v1.CatalogProvider.copy(block: `agent.v1`.CatalogProviderKt.Dsl.() -> kotlin.Unit): agent.v1.CatalogProvider =
   `agent.v1`.CatalogProviderKt.Dsl._create(this.toBuilder()).apply { block() }._build()
-
-public inline fun agent.v1.CatalogProvider.ModelsEntry.copy(block: `agent.v1`.CatalogProviderKt.ModelsEntryKt.Dsl.() -> kotlin.Unit): agent.v1.CatalogProvider.ModelsEntry =
-  `agent.v1`.CatalogProviderKt.ModelsEntryKt.Dsl._create(this.toBuilder()).apply { block() }._build()
-
-public val agent.v1.CatalogProvider.ModelsEntryOrBuilder.valueOrNull: com.google.protobuf.Value?
-  get() = if (hasValue()) getValue() else null
 

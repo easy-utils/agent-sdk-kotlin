@@ -53,69 +53,59 @@ public object PromptResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ParamsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];`
+     * `map<string, string> params = 2 [json_name = "params"];`
      */
-     public val params: com.google.protobuf.kotlin.DslList<agent.v1.PromptResponse.ParamsEntry, ParamsProxy>
+     public val params: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, ParamsProxy>
       @kotlin.jvm.JvmSynthetic
-  get() = com.google.protobuf.kotlin.DslList(
-        _builder.paramsList
+@kotlin.jvm.JvmName("getParamsMap")
+      get() = com.google.protobuf.kotlin.DslMap(
+        _builder.paramsMap
       )
     /**
-     * `repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];`
-     * @param value The params to add.
+     * `map<string, string> params = 2 [json_name = "params"];`
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addParams")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.PromptResponse.ParamsEntry, ParamsProxy>.add(value: agent.v1.PromptResponse.ParamsEntry) {
-      _builder.addParams(value)
-    }
+    @kotlin.jvm.JvmName("putParams")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, ParamsProxy>
+      .put(key: kotlin.String, value: kotlin.String) {
+         _builder.putParams(key, value)
+       }
     /**
-     * `repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];`
-     * @param value The params to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignParams")
-    @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<agent.v1.PromptResponse.ParamsEntry, ParamsProxy>.plusAssign(value: agent.v1.PromptResponse.ParamsEntry) {
-      add(value)
-    }
-    /**
-     * `repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];`
-     * @param values The params to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllParams")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.PromptResponse.ParamsEntry, ParamsProxy>.addAll(values: kotlin.collections.Iterable<agent.v1.PromptResponse.ParamsEntry>) {
-      _builder.addAllParams(values)
-    }
-    /**
-     * `repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];`
-     * @param values The params to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllParams")
-    @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<agent.v1.PromptResponse.ParamsEntry, ParamsProxy>.plusAssign(values: kotlin.collections.Iterable<agent.v1.PromptResponse.ParamsEntry>) {
-      addAll(values)
-    }
-    /**
-     * `repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];`
-     * @param index The index to set the value at.
-     * @param value The params to set.
+     * `map<string, string> params = 2 [json_name = "params"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setParams")
-    public operator fun com.google.protobuf.kotlin.DslList<agent.v1.PromptResponse.ParamsEntry, ParamsProxy>.set(index: kotlin.Int, value: agent.v1.PromptResponse.ParamsEntry) {
-      _builder.setParams(index, value)
-    }
+    @Suppress("NOTHING_TO_INLINE")
+    public inline operator fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, ParamsProxy>
+      .set(key: kotlin.String, value: kotlin.String) {
+         put(key, value)
+       }
     /**
-     * `repeated .agent.v1.PromptResponse.ParamsEntry params = 2 [json_name = "params"];`
+     * `map<string, string> params = 2 [json_name = "params"];`
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("removeParams")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, ParamsProxy>
+      .remove(key: kotlin.String) {
+         _builder.removeParams(key)
+       }
+    /**
+     * `map<string, string> params = 2 [json_name = "params"];`
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("putAllParams")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, ParamsProxy>
+      .putAll(map: kotlin.collections.Map<kotlin.String, kotlin.String>) {
+         _builder.putAllParams(map)
+       }
+    /**
+     * `map<string, string> params = 2 [json_name = "params"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearParams")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.PromptResponse.ParamsEntry, ParamsProxy>.clear() {
-      _builder.clearParams()
-    }
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, ParamsProxy>
+      .clear() {
+         _builder.clearParams()
+       }
 
     /**
      * `string eid = 3 [json_name = "eid"];`
@@ -134,67 +124,7 @@ public object PromptResponseKt {
       _builder.clearEid()
     }
   }
-  @kotlin.jvm.JvmName("-initializeparamsEntry")
-  public inline fun paramsEntry(block: agent.v1.PromptResponseKt.ParamsEntryKt.Dsl.() -> kotlin.Unit): agent.v1.PromptResponse.ParamsEntry =
-    agent.v1.PromptResponseKt.ParamsEntryKt.Dsl._create(agent.v1.PromptResponse.ParamsEntry.newBuilder()).apply { block() }._build()
-  /**
-   * Protobuf type `agent.v1.PromptResponse.ParamsEntry`
-   */
-  public object ParamsEntryKt {
-    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    @com.google.protobuf.kotlin.ProtoDslMarker
-    public class Dsl private constructor(
-      private val _builder: agent.v1.PromptResponse.ParamsEntry.Builder
-    ) {
-      public companion object {
-        @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-        internal fun _create(builder: agent.v1.PromptResponse.ParamsEntry.Builder): Dsl = Dsl(builder)
-      }
-
-      @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-      internal fun _build(): agent.v1.PromptResponse.ParamsEntry = _builder.build()
-
-      /**
-       * `string key = 1 [json_name = "key"];`
-       */
-      public var key: kotlin.String
-        @kotlin.jvm.JvmName("getKey")
-          get() = _builder.key
-        @kotlin.jvm.JvmName("setKey")
-          set(value) {
-          _builder.key = value
-        }
-      /**
-       * `string key = 1 [json_name = "key"];`
-       */
-      public fun clearKey() {
-        _builder.clearKey()
-      }
-
-      /**
-       * `string value = 2 [json_name = "value"];`
-       */
-      public var value: kotlin.String
-        @kotlin.jvm.JvmName("getValue")
-          get() = _builder.value
-        @kotlin.jvm.JvmName("setValue")
-          set(value) {
-          _builder.value = value
-        }
-      /**
-       * `string value = 2 [json_name = "value"];`
-       */
-      public fun clearValue() {
-        _builder.clearValue()
-      }
-    }
-  }
 }
 public inline fun agent.v1.PromptResponse.copy(block: `agent.v1`.PromptResponseKt.Dsl.() -> kotlin.Unit): agent.v1.PromptResponse =
   `agent.v1`.PromptResponseKt.Dsl._create(this.toBuilder()).apply { block() }._build()
-
-public inline fun agent.v1.PromptResponse.ParamsEntry.copy(block: `agent.v1`.PromptResponseKt.ParamsEntryKt.Dsl.() -> kotlin.Unit): agent.v1.PromptResponse.ParamsEntry =
-  `agent.v1`.PromptResponseKt.ParamsEntryKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

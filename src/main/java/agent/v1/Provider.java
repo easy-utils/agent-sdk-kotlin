@@ -19,415 +19,9 @@ public  final class Provider extends
     apiType_ = "";
     baseUrl_ = "";
     apiKey_ = "";
-    headers_ = emptyProtobufList();
     models_ = emptyProtobufList();
     updatedAt_ = "";
   }
-  public interface HeadersEntryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:agent.v1.Provider.HeadersEntry)
-      com.google.protobuf.MessageLiteOrBuilder {
-
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The key.
-     */
-    java.lang.String getKey();
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The bytes for key.
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
-     */
-    java.lang.String getValue();
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
-     */
-    com.google.protobuf.ByteString
-        getValueBytes();
-  }
-  /**
-   * Protobuf type {@code agent.v1.Provider.HeadersEntry}
-   */
-  public  static final class HeadersEntry extends
-      com.google.protobuf.GeneratedMessageLite<
-          HeadersEntry, HeadersEntry.Builder> implements
-      // @@protoc_insertion_point(message_implements:agent.v1.Provider.HeadersEntry)
-      HeadersEntryOrBuilder {
-    private HeadersEntry() {
-      key_ = "";
-      value_ = "";
-    }
-    public static final int KEY_FIELD_NUMBER = 1;
-    private java.lang.String key_;
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The key.
-     */
-    @java.lang.Override
-    public java.lang.String getKey() {
-      return key_;
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @return The bytes for key.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(key_);
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @param value The key to set.
-     */
-    private void setKey(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-
-      key_ = value;
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     */
-    private void clearKey() {
-
-      key_ = getDefaultInstance().getKey();
-    }
-    /**
-     * <code>string key = 1 [json_name = "key"];</code>
-     * @param value The bytes for key to set.
-     */
-    private void setKeyBytes(
-        com.google.protobuf.ByteString value) {
-      checkByteStringIsUtf8(value);
-      key_ = value.toStringUtf8();
-
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 2;
-    private java.lang.String value_;
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
-     */
-    @java.lang.Override
-    public java.lang.String getValue() {
-      return value_;
-    }
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getValueBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(value_);
-    }
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @param value The value to set.
-     */
-    private void setValue(
-        java.lang.String value) {
-      java.util.Objects.requireNonNull(value);
-
-      value_ = value;
-    }
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     */
-    private void clearValue() {
-
-      value_ = getDefaultInstance().getValue();
-    }
-    /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @param value The bytes for value to set.
-     */
-    private void setValueBytes(
-        com.google.protobuf.ByteString value) {
-      checkByteStringIsUtf8(value);
-      value_ = value.toStringUtf8();
-
-    }
-
-    public static agent.v1.Provider.HeadersEntry parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.Provider.HeadersEntry parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.Provider.HeadersEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.Provider.HeadersEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.Provider.HeadersEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
-    }
-    public static agent.v1.Provider.HeadersEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
-    }
-    public static agent.v1.Provider.HeadersEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
-    }
-    public static agent.v1.Provider.HeadersEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-
-    public static agent.v1.Provider.HeadersEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
-    }
-
-    public static agent.v1.Provider.HeadersEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-    public static agent.v1.Provider.HeadersEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
-    }
-    public static agent.v1.Provider.HeadersEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() {
-      return (Builder) DEFAULT_INSTANCE.createBuilder();
-    }
-    public static Builder newBuilder(agent.v1.Provider.HeadersEntry prototype) {
-      return DEFAULT_INSTANCE.createBuilder(prototype);
-    }
-
-    /**
-     * Protobuf type {@code agent.v1.Provider.HeadersEntry}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          agent.v1.Provider.HeadersEntry, Builder> implements
-        // @@protoc_insertion_point(builder_implements:agent.v1.Provider.HeadersEntry)
-        agent.v1.Provider.HeadersEntryOrBuilder {
-      // Construct using agent.v1.Provider.HeadersEntry.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
-      }
-
-
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return The key.
-       */
-      @java.lang.Override
-      public java.lang.String getKey() {
-        return instance.getKey();
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return The bytes for key.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        return instance.getKeyBytes();
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @param value The key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKey(
-          java.lang.String value) {
-        copyOnWrite();
-        instance.setKey(value);
-        return this;
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKey() {
-        copyOnWrite();
-        instance.clearKey();
-        return this;
-      }
-      /**
-       * <code>string key = 1 [json_name = "key"];</code>
-       * @param value The bytes for key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setKeyBytes(value);
-        return this;
-      }
-
-      /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return The value.
-       */
-      @java.lang.Override
-      public java.lang.String getValue() {
-        return instance.getValue();
-      }
-      /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return The bytes for value.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getValueBytes() {
-        return instance.getValueBytes();
-      }
-      /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValue(
-          java.lang.String value) {
-        copyOnWrite();
-        instance.setValue(value);
-        return this;
-      }
-      /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearValue() {
-        copyOnWrite();
-        instance.clearValue();
-        return this;
-      }
-      /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @param value The bytes for value to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValueBytes(
-          com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setValueBytes(value);
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:agent.v1.Provider.HeadersEntry)
-    }
-    @java.lang.Override
-    @java.lang.SuppressWarnings({"ThrowNull"})
-    protected final java.lang.Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        java.lang.Object arg0, java.lang.Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new agent.v1.Provider.HeadersEntry();
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case BUILD_MESSAGE_INFO: {
-            java.lang.Object[] objects = new java.lang.Object[] {
-              "key_",
-              "value_",
-            };
-            java.lang.String info =
-                "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-                "";
-            return newMessageInfo(DEFAULT_INSTANCE, info, objects);
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          com.google.protobuf.Parser<agent.v1.Provider.HeadersEntry> parser = PARSER;
-          if (parser == null) {
-            synchronized (agent.v1.Provider.HeadersEntry.class) {
-              parser = PARSER;
-              if (parser == null) {
-                parser =
-                    new DefaultInstanceBasedParser<agent.v1.Provider.HeadersEntry>(
-                        DEFAULT_INSTANCE);
-                PARSER = parser;
-              }
-            }
-          }
-          return parser;
-        }
-        case GET_MEMOIZED_IS_INITIALIZED: {
-          return (byte) 1;
-        }
-        // SET_MEMOIZED_IS_INITIALIZED is never called for this message.
-        // So it can do anything. Combine with default case for smaller codegen.
-        case SET_MEMOIZED_IS_INITIALIZED:
-      }
-      // Should never happen. Generates tight code to throw an exception.
-      throw null;
-    }
-
-
-    // @@protoc_insertion_point(class_scope:agent.v1.Provider.HeadersEntry)
-    private static final agent.v1.Provider.HeadersEntry DEFAULT_INSTANCE;
-    static {
-      HeadersEntry defaultInstance = new HeadersEntry();
-      // New instances are implicitly immutable so no need to make
-      // immutable.
-      DEFAULT_INSTANCE = defaultInstance;
-      com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
-        HeadersEntry.class, defaultInstance);
-    }
-
-    public static agent.v1.Provider.HeadersEntry getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static volatile com.google.protobuf.Parser<HeadersEntry> PARSER;
-
-    public static com.google.protobuf.Parser<HeadersEntry> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
-    }
-  }
-
   public static final int PROVIDER_ID_FIELD_NUMBER = 1;
   private java.lang.String providerId_;
   /**
@@ -617,97 +211,100 @@ public  final class Provider extends
   }
 
   public static final int HEADERS_FIELD_NUMBER = 5;
-  private com.google.protobuf.Internal.ProtobufList<agent.v1.Provider.HeadersEntry> headers_;
-  /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<agent.v1.Provider.HeadersEntry> getHeadersList() {
+  private static final class HeadersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntryLite<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntryLite
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapFieldLite<
+      java.lang.String, java.lang.String> headers_ =
+          com.google.protobuf.MapFieldLite.emptyMapField();
+  private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.String>
+  internalGetHeaders() {
     return headers_;
   }
-  /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-   */
-  public java.util.List<? extends agent.v1.Provider.HeadersEntryOrBuilder> 
-      getHeadersOrBuilderList() {
+  private com.google.protobuf.MapFieldLite<java.lang.String, java.lang.String>
+  internalGetMutableHeaders() {
+    if (!headers_.isMutable()) {
+      headers_ = headers_.mutableCopy();
+    }
     return headers_;
   }
-  /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-   */
   @java.lang.Override
-  public int getHeadersCount() {
-    return headers_.size();
-  }
-  /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-   */
-  @java.lang.Override
-  public agent.v1.Provider.HeadersEntry getHeaders(int index) {
-    return headers_.get(index);
-  }
-  /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-   */
-  public agent.v1.Provider.HeadersEntryOrBuilder getHeadersOrBuilder(
-      int index) {
-    return headers_.get(index);
-  }
-  private void ensureHeadersIsMutable() {
-    com.google.protobuf.Internal.ProtobufList<agent.v1.Provider.HeadersEntry> tmp = headers_;
-    if (!tmp.isModifiable()) {
-      headers_ =
-          com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
-     }
-  }
 
-  /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-   */
-  private void setHeaders(
-      int index, agent.v1.Provider.HeadersEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureHeadersIsMutable();
-    headers_.set(index, value);
+  public int getHeadersCount() {
+    return internalGetHeaders().size();
   }
   /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
+   * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
    */
-  private void addHeaders(agent.v1.Provider.HeadersEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureHeadersIsMutable();
-    headers_.add(value);
+  @java.lang.Override
+
+  public boolean containsHeaders(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key);
+    return internalGetHeaders().containsKey(key);
   }
   /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
+   * Use {@link #getHeadersMap()} instead.
    */
-  private void addHeaders(
-      int index, agent.v1.Provider.HeadersEntry value) {
-    java.util.Objects.requireNonNull(value);
-    ensureHeadersIsMutable();
-    headers_.add(index, value);
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
+    return getHeadersMap();
   }
   /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
+   * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
    */
-  private void addAllHeaders(
-      java.lang.Iterable<? extends agent.v1.Provider.HeadersEntry> values) {
-    ensureHeadersIsMutable();
-    com.google.protobuf.AbstractMessageLite.addAll(
-        values, headers_);
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
+    return java.util.Collections.unmodifiableMap(
+        internalGetHeaders());
   }
   /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
+   * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
    */
-  private void clearHeaders() {
-    headers_ = emptyProtobufList();
+  @java.lang.Override
+
+  public /* nullable */
+java.lang.String getHeadersOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    java.util.Objects.requireNonNull(key);
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetHeaders();
+    java.lang.String v = map.get(key);
+    return v != null ? v : defaultValue;
   }
   /**
-   * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
+   * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
    */
-  private void removeHeaders(int index) {
-    ensureHeadersIsMutable();
-    headers_.remove(index);
+  @java.lang.Override
+
+  public java.lang.String getHeadersOrThrow(
+      java.lang.String key) {
+    java.util.Objects.requireNonNull(key);
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetHeaders();
+    java.lang.String v = map.get(key);
+    if (v == null) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return v;
+  }
+  /**
+   * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
+   */
+  private java.util.Map<java.lang.String, java.lang.String>
+  getMutableHeadersMap() {
+    return internalGetMutableHeaders();
   }
 
   public static final int MODELS_FIELD_NUMBER = 6;
@@ -1144,105 +741,103 @@ public  final class Provider extends
       return this;
     }
 
-    /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-     */
     @java.lang.Override
-    public java.util.List<agent.v1.Provider.HeadersEntry> getHeadersList() {
-      return java.util.Collections.unmodifiableList(
-          instance.getHeadersList());
-    }
-    /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-     */
-    @java.lang.Override
+
     public int getHeadersCount() {
-      return instance.getHeadersCount();
-    }/**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
+      return instance.getHeadersMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
      */
     @java.lang.Override
-    public agent.v1.Provider.HeadersEntry getHeaders(int index) {
-      return instance.getHeaders(index);
+
+    public boolean containsHeaders(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
+      return instance.getHeadersMap().containsKey(key);
     }
-    /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-     */
-    public Builder setHeaders(
-        int index, agent.v1.Provider.HeadersEntry value) {
-      copyOnWrite();
-      instance.setHeaders(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-     */
-    public Builder setHeaders(
-        int index, agent.v1.Provider.HeadersEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.setHeaders(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-     */
-    public Builder addHeaders(agent.v1.Provider.HeadersEntry value) {
-      copyOnWrite();
-      instance.addHeaders(value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-     */
-    public Builder addHeaders(
-        int index, agent.v1.Provider.HeadersEntry value) {
-      copyOnWrite();
-      instance.addHeaders(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-     */
-    public Builder addHeaders(
-        agent.v1.Provider.HeadersEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.addHeaders(builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-     */
-    public Builder addHeaders(
-        int index, agent.v1.Provider.HeadersEntry.Builder builderForValue) {
-      copyOnWrite();
-      instance.addHeaders(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-     */
-    public Builder addAllHeaders(
-        java.lang.Iterable<? extends agent.v1.Provider.HeadersEntry> values) {
-      copyOnWrite();
-      instance.addAllHeaders(values);
-      return this;
-    }
-    /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
-     */
+
     public Builder clearHeaders() {
       copyOnWrite();
-      instance.clearHeaders();
+      instance.getMutableHeadersMap().clear();
       return this;
     }
     /**
-     * <code>repeated .agent.v1.Provider.HeadersEntry headers = 5 [json_name = "headers"];</code>
+     * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
      */
-    public Builder removeHeaders(int index) {
+
+    public Builder removeHeaders(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
       copyOnWrite();
-      instance.removeHeaders(index);
+      instance.getMutableHeadersMap().remove(key);
+      return this;
+    }
+    /**
+     * Use {@link #getHeadersMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
+      return getHeadersMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
+      return java.util.Collections.unmodifiableMap(
+          instance.getHeadersMap());
+    }
+    /**
+     * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
+     */
+    @java.lang.Override
+
+    public /* nullable */
+java.lang.String getHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Map<java.lang.String, java.lang.String> map =
+          instance.getHeadersMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getHeadersOrThrow(
+        java.lang.String key) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Map<java.lang.String, java.lang.String> map =
+          instance.getHeadersMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    /**
+     * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
+     */
+    public Builder putHeaders(
+        java.lang.String key,
+        java.lang.String value) {
+      java.util.Objects.requireNonNull(key);
+      java.util.Objects.requireNonNull(value);
+      copyOnWrite();
+      instance.getMutableHeadersMap().put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; headers = 5 [json_name = "headers"];</code>
+     */
+    public Builder putAllHeaders(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      copyOnWrite();
+      instance.getMutableHeadersMap().putAll(values);
       return this;
     }
 
@@ -1418,14 +1013,14 @@ public  final class Provider extends
             "baseUrl_",
             "apiKey_",
             "headers_",
-            agent.v1.Provider.HeadersEntry.class,
+            HeadersDefaultEntryHolder.defaultEntry,
             "models_",
             agent.v1.ProviderModel.class,
             "updatedAt_",
           };
           java.lang.String info =
-              "\u0000\u0007\u0000\u0000\u0001\u0007\u0007\u0000\u0002\u0000\u0001\u0208\u0002\u0208" +
-              "\u0003\u0208\u0004\u0208\u0005\u001b\u0006\u001b\u0007\u0208";
+              "\u0000\u0007\u0000\u0000\u0001\u0007\u0007\u0001\u0001\u0000\u0001\u0208\u0002\u0208" +
+              "\u0003\u0208\u0004\u0208\u00052\u0006\u001b\u0007\u0208";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

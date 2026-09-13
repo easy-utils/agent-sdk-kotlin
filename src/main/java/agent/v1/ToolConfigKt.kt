@@ -36,144 +36,61 @@ public object ToolConfigKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ValuesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];`
+     * `map<string, .google.protobuf.Value> values = 1 [json_name = "values"];`
      */
-     public val values: com.google.protobuf.kotlin.DslList<agent.v1.ToolConfig.ValuesEntry, ValuesProxy>
+     public val values: com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ValuesProxy>
       @kotlin.jvm.JvmSynthetic
-  get() = com.google.protobuf.kotlin.DslList(
-        _builder.valuesList
+@kotlin.jvm.JvmName("getValuesMap")
+      get() = com.google.protobuf.kotlin.DslMap(
+        _builder.valuesMap
       )
     /**
-     * `repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];`
-     * @param value The values to add.
+     * `map<string, .google.protobuf.Value> values = 1 [json_name = "values"];`
      */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addValues")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.ToolConfig.ValuesEntry, ValuesProxy>.add(value: agent.v1.ToolConfig.ValuesEntry) {
-      _builder.addValues(value)
-    }
+    @kotlin.jvm.JvmName("putValues")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ValuesProxy>
+      .put(key: kotlin.String, value: com.google.protobuf.Value) {
+         _builder.putValues(key, value)
+       }
     /**
-     * `repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];`
-     * @param value The values to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignValues")
-    @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<agent.v1.ToolConfig.ValuesEntry, ValuesProxy>.plusAssign(value: agent.v1.ToolConfig.ValuesEntry) {
-      add(value)
-    }
-    /**
-     * `repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];`
-     * @param values The values to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllValues")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.ToolConfig.ValuesEntry, ValuesProxy>.addAll(values: kotlin.collections.Iterable<agent.v1.ToolConfig.ValuesEntry>) {
-      _builder.addAllValues(values)
-    }
-    /**
-     * `repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];`
-     * @param values The values to add.
-     */
-    @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllValues")
-    @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<agent.v1.ToolConfig.ValuesEntry, ValuesProxy>.plusAssign(values: kotlin.collections.Iterable<agent.v1.ToolConfig.ValuesEntry>) {
-      addAll(values)
-    }
-    /**
-     * `repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];`
-     * @param index The index to set the value at.
-     * @param value The values to set.
+     * `map<string, .google.protobuf.Value> values = 1 [json_name = "values"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setValues")
-    public operator fun com.google.protobuf.kotlin.DslList<agent.v1.ToolConfig.ValuesEntry, ValuesProxy>.set(index: kotlin.Int, value: agent.v1.ToolConfig.ValuesEntry) {
-      _builder.setValues(index, value)
-    }
+    @Suppress("NOTHING_TO_INLINE")
+    public inline operator fun com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ValuesProxy>
+      .set(key: kotlin.String, value: com.google.protobuf.Value) {
+         put(key, value)
+       }
     /**
-     * `repeated .agent.v1.ToolConfig.ValuesEntry values = 1 [json_name = "values"];`
+     * `map<string, .google.protobuf.Value> values = 1 [json_name = "values"];`
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("removeValues")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ValuesProxy>
+      .remove(key: kotlin.String) {
+         _builder.removeValues(key)
+       }
+    /**
+     * `map<string, .google.protobuf.Value> values = 1 [json_name = "values"];`
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("putAllValues")
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ValuesProxy>
+      .putAll(map: kotlin.collections.Map<kotlin.String, com.google.protobuf.Value>) {
+         _builder.putAllValues(map)
+       }
+    /**
+     * `map<string, .google.protobuf.Value> values = 1 [json_name = "values"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearValues")
-    public fun com.google.protobuf.kotlin.DslList<agent.v1.ToolConfig.ValuesEntry, ValuesProxy>.clear() {
-      _builder.clearValues()
-    }
-  }
-  @kotlin.jvm.JvmName("-initializevaluesEntry")
-  public inline fun valuesEntry(block: agent.v1.ToolConfigKt.ValuesEntryKt.Dsl.() -> kotlin.Unit): agent.v1.ToolConfig.ValuesEntry =
-    agent.v1.ToolConfigKt.ValuesEntryKt.Dsl._create(agent.v1.ToolConfig.ValuesEntry.newBuilder()).apply { block() }._build()
-  /**
-   * Protobuf type `agent.v1.ToolConfig.ValuesEntry`
-   */
-  public object ValuesEntryKt {
-    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    @com.google.protobuf.kotlin.ProtoDslMarker
-    public class Dsl private constructor(
-      private val _builder: agent.v1.ToolConfig.ValuesEntry.Builder
-    ) {
-      public companion object {
-        @kotlin.jvm.JvmSynthetic
-    @kotlin.PublishedApi
-        internal fun _create(builder: agent.v1.ToolConfig.ValuesEntry.Builder): Dsl = Dsl(builder)
-      }
-
-      @kotlin.jvm.JvmSynthetic
-  @kotlin.PublishedApi
-      internal fun _build(): agent.v1.ToolConfig.ValuesEntry = _builder.build()
-
-      /**
-       * `string key = 1 [json_name = "key"];`
-       */
-      public var key: kotlin.String
-        @kotlin.jvm.JvmName("getKey")
-          get() = _builder.key
-        @kotlin.jvm.JvmName("setKey")
-          set(value) {
-          _builder.key = value
-        }
-      /**
-       * `string key = 1 [json_name = "key"];`
-       */
-      public fun clearKey() {
-        _builder.clearKey()
-      }
-
-      /**
-       * `.google.protobuf.Value value = 2 [json_name = "value"];`
-       */
-      public var value: com.google.protobuf.Value
-        @kotlin.jvm.JvmName("getValue")
-          get() = _builder.value
-        @kotlin.jvm.JvmName("setValue")
-          set(value) {
-          _builder.value = value
-        }
-      /**
-       * `.google.protobuf.Value value = 2 [json_name = "value"];`
-       */
-      public fun clearValue() {
-        _builder.clearValue()
-      }
-      /**
-       * `.google.protobuf.Value value = 2 [json_name = "value"];`
-       * @return Whether the value field is set.
-       */
-      public fun hasValue(): kotlin.Boolean {
-        return _builder.hasValue()
-      }
-
-      public val ValuesEntryKt.Dsl.valueOrNull: com.google.protobuf.Value?
-        get() = _builder.valueOrNull
-    }
+    public fun com.google.protobuf.kotlin.DslMap<kotlin.String, com.google.protobuf.Value, ValuesProxy>
+      .clear() {
+         _builder.clearValues()
+       }
   }
 }
 public inline fun agent.v1.ToolConfig.copy(block: `agent.v1`.ToolConfigKt.Dsl.() -> kotlin.Unit): agent.v1.ToolConfig =
   `agent.v1`.ToolConfigKt.Dsl._create(this.toBuilder()).apply { block() }._build()
-
-public inline fun agent.v1.ToolConfig.ValuesEntry.copy(block: `agent.v1`.ToolConfigKt.ValuesEntryKt.Dsl.() -> kotlin.Unit): agent.v1.ToolConfig.ValuesEntry =
-  `agent.v1`.ToolConfigKt.ValuesEntryKt.Dsl._create(this.toBuilder()).apply { block() }._build()
-
-public val agent.v1.ToolConfig.ValuesEntryOrBuilder.valueOrNull: com.google.protobuf.Value?
-  get() = if (hasValue()) getValue() else null
 
