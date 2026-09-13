@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.2.21"
+    `maven-publish`
 }
 
 group = "agentsdk"
@@ -30,4 +31,25 @@ kotlin { jvmToolchain(17) }
 tasks.register<JavaExec>("live") {
     mainClass.set("agentsdk.LiveKt")
     classpath = sourceSets["main"].runtimeClasspath
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+            groupId = "io.github.easy-utils"
+            artifactId = "agent-sdk-kotlin"
+            version = "0.13.0"
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/easy-utils/agent-sdk-kotlin")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") ?: ""
+                password = System.getenv("GITHUB_TOKEN") ?: ""
+            }
+        }
+    }
 }
