@@ -23,7 +23,7 @@ dependencies {
     implementation("com.google.protobuf:protobuf-javalite:4.34.0")
     implementation("com.google.protobuf:protobuf-kotlin-lite:4.34.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
-    implementation("io.github.easy-utils:easy-rpc-kotlin:0.3.0")
+    implementation("io.github.easy-utils:easy-rpc-kotlin:0.4.0")
 }
 
 kotlin { jvmToolchain(17) }
@@ -39,7 +39,7 @@ publishing {
             from(components["java"])
             groupId = "io.github.easy-utils"
             artifactId = "agent-sdk-kotlin"
-            version = "0.14.0"
+            version = "0.15.0"
         }
     }
     repositories {
