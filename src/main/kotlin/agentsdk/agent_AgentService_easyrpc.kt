@@ -46,16 +46,19 @@ class AgentServiceClient(private val t: Transport) {
   fun prompt(req: PromptRequest): Flow<PromptResponse> = flow {
     val st = t.openStream(Request(url = "/agent.v1.AgentService/Prompt", body = req.toByteArray()))
     while (true) { val p = st.recv() ?: break; emit(PromptResponse.parseFrom(p)) }
+    st.lastError()?.let { throw it }
   }
 
   fun watchSession(req: WatchSessionRequest): Flow<WatchSessionResponse> = flow {
     val st = t.openStream(Request(url = "/agent.v1.AgentService/WatchSession", body = req.toByteArray()))
     while (true) { val p = st.recv() ?: break; emit(WatchSessionResponse.parseFrom(p)) }
+    st.lastError()?.let { throw it }
   }
 
   fun watchSessions(req: WatchSessionsRequest): Flow<WatchSessionsResponse> = flow {
     val st = t.openStream(Request(url = "/agent.v1.AgentService/WatchSessions", body = req.toByteArray()))
     while (true) { val p = st.recv() ?: break; emit(WatchSessionsResponse.parseFrom(p)) }
+    st.lastError()?.let { throw it }
   }
 
   suspend fun fork(req: ForkRequest): ForkResponse {
