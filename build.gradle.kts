@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "agentsdk"
-version = "0.16.0"
+version = "0.17.0"
 
 repositories {
     mavenCentral()
@@ -39,7 +39,7 @@ kotlin {
                 api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
                 api("pro.streem.pbandk:pbandk-runtime:0.16.0")
                 // easy-rpc KMP core (jvm + js + wasmJs + linuxX64/arm64).
-                api("io.github.easy-utils:easy-rpc-kotlin:3.0.0")
+                api("io.github.easy-utils:easy-rpc-kotlin:3.1.0")
             }
         }
         val commonTest by getting {

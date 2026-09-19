@@ -10,274 +10,313 @@ import kotlinx.coroutines.flow.flow
 
 class AgentServiceClient(private val t: Transport) {
   var lastTrailers: Map<String, List<String>> = emptyMap()
-  suspend fun health(req: HealthRequest): HealthResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/Health", body = req.encodeToByteArray()))
+  suspend fun health(req: HealthRequest, kind: String = KIND_PROTO): HealthResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/Health", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return HealthResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, HealthResponse.Companion, kind)
   }
 
-  suspend fun listSessions(req: ListSessionsRequest): ListSessionsResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/ListSessions", body = req.encodeToByteArray()))
+  suspend fun listSessions(req: ListSessionsRequest, kind: String = KIND_PROTO): ListSessionsResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/ListSessions", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return ListSessionsResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, ListSessionsResponse.Companion, kind)
   }
 
-  suspend fun createSession(req: CreateSessionRequest): CreateSessionResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/CreateSession", body = req.encodeToByteArray()))
+  suspend fun createSession(req: CreateSessionRequest, kind: String = KIND_PROTO): CreateSessionResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/CreateSession", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return CreateSessionResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, CreateSessionResponse.Companion, kind)
   }
 
-  suspend fun getSession(req: GetSessionRequest): GetSessionResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/GetSession", body = req.encodeToByteArray()))
+  suspend fun getSession(req: GetSessionRequest, kind: String = KIND_PROTO): GetSessionResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/GetSession", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return GetSessionResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, GetSessionResponse.Companion, kind)
   }
 
-  suspend fun deleteSession(req: DeleteSessionRequest): DeleteSessionResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/DeleteSession", body = req.encodeToByteArray()))
+  suspend fun deleteSession(req: DeleteSessionRequest, kind: String = KIND_PROTO): DeleteSessionResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/DeleteSession", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return DeleteSessionResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, DeleteSessionResponse.Companion, kind)
   }
 
-  suspend fun listMessages(req: ListMessagesRequest): ListMessagesResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/ListMessages", body = req.encodeToByteArray()))
+  suspend fun listMessages(req: ListMessagesRequest, kind: String = KIND_PROTO): ListMessagesResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/ListMessages", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return ListMessagesResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, ListMessagesResponse.Companion, kind)
   }
 
-  fun prompt(req: PromptRequest): Flow<PromptResponse> = flow {
-    val st = t.openStream(Request(url = "/agent.v1.AgentService/Prompt", body = frame(req.encodeToByteArray())))
-    while (true) { val p = st.recv() ?: break; emit(PromptResponse.decodeFromByteArray(p)) }
+  fun prompt(req: PromptRequest, kind: String = KIND_PROTO): Flow<PromptResponse> = flow {
+    val ct = contentTypeFor(true, kind)
+    val st = t.openStream(Request(url = "/agent.v1.AgentService/Prompt", headers = mapOf("content-type" to listOf(ct)), body = frame(encodeMsg(req, kind))))
+    while (true) { val p = st.recv() ?: break; emit(decodeMsg(p, PromptResponse.Companion, kind)) }
     st.lastError()?.let { throw it }
   }
 
-  fun watchSession(req: WatchSessionRequest): Flow<WatchSessionResponse> = flow {
-    val st = t.openStream(Request(url = "/agent.v1.AgentService/WatchSession", body = frame(req.encodeToByteArray())))
-    while (true) { val p = st.recv() ?: break; emit(WatchSessionResponse.decodeFromByteArray(p)) }
+  fun watchSession(req: WatchSessionRequest, kind: String = KIND_PROTO): Flow<WatchSessionResponse> = flow {
+    val ct = contentTypeFor(true, kind)
+    val st = t.openStream(Request(url = "/agent.v1.AgentService/WatchSession", headers = mapOf("content-type" to listOf(ct)), body = frame(encodeMsg(req, kind))))
+    while (true) { val p = st.recv() ?: break; emit(decodeMsg(p, WatchSessionResponse.Companion, kind)) }
     st.lastError()?.let { throw it }
   }
 
-  fun watchSessions(req: WatchSessionsRequest): Flow<WatchSessionsResponse> = flow {
-    val st = t.openStream(Request(url = "/agent.v1.AgentService/WatchSessions", body = frame(req.encodeToByteArray())))
-    while (true) { val p = st.recv() ?: break; emit(WatchSessionsResponse.decodeFromByteArray(p)) }
+  fun watchSessions(req: WatchSessionsRequest, kind: String = KIND_PROTO): Flow<WatchSessionsResponse> = flow {
+    val ct = contentTypeFor(true, kind)
+    val st = t.openStream(Request(url = "/agent.v1.AgentService/WatchSessions", headers = mapOf("content-type" to listOf(ct)), body = frame(encodeMsg(req, kind))))
+    while (true) { val p = st.recv() ?: break; emit(decodeMsg(p, WatchSessionsResponse.Companion, kind)) }
     st.lastError()?.let { throw it }
   }
 
-  suspend fun fork(req: ForkRequest): ForkResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/Fork", body = req.encodeToByteArray()))
+  suspend fun fork(req: ForkRequest, kind: String = KIND_PROTO): ForkResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/Fork", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return ForkResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, ForkResponse.Companion, kind)
   }
 
-  suspend fun rename(req: RenameRequest): RenameResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/Rename", body = req.encodeToByteArray()))
+  suspend fun rename(req: RenameRequest, kind: String = KIND_PROTO): RenameResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/Rename", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return RenameResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, RenameResponse.Companion, kind)
   }
 
-  suspend fun setModel(req: SetModelRequest): SetModelResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/SetModel", body = req.encodeToByteArray()))
+  suspend fun setModel(req: SetModelRequest, kind: String = KIND_PROTO): SetModelResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/SetModel", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return SetModelResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, SetModelResponse.Companion, kind)
   }
 
-  suspend fun undo(req: UndoRequest): UndoResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/Undo", body = req.encodeToByteArray()))
+  suspend fun undo(req: UndoRequest, kind: String = KIND_PROTO): UndoResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/Undo", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return UndoResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, UndoResponse.Companion, kind)
   }
 
-  suspend fun state(req: StateRequest): StateResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/State", body = req.encodeToByteArray()))
+  suspend fun state(req: StateRequest, kind: String = KIND_PROTO): StateResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/State", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return StateResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, StateResponse.Companion, kind)
   }
 
-  suspend fun mailbox(req: MailboxRequest): MailboxResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/Mailbox", body = req.encodeToByteArray()))
+  suspend fun mailbox(req: MailboxRequest, kind: String = KIND_PROTO): MailboxResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/Mailbox", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return MailboxResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, MailboxResponse.Companion, kind)
   }
 
-  suspend fun updateSettings(req: UpdateSettingsRequest): UpdateSettingsResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/UpdateSettings", body = req.encodeToByteArray()))
+  suspend fun updateSettings(req: UpdateSettingsRequest, kind: String = KIND_PROTO): UpdateSettingsResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/UpdateSettings", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return UpdateSettingsResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, UpdateSettingsResponse.Companion, kind)
   }
 
-  suspend fun interrupt(req: InterruptRequest): InterruptResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/Interrupt", body = req.encodeToByteArray()))
+  suspend fun interrupt(req: InterruptRequest, kind: String = KIND_PROTO): InterruptResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/Interrupt", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return InterruptResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, InterruptResponse.Companion, kind)
   }
 
-  suspend fun compact(req: CompactRequest): CompactResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/Compact", body = req.encodeToByteArray()))
+  suspend fun compact(req: CompactRequest, kind: String = KIND_PROTO): CompactResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/Compact", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return CompactResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, CompactResponse.Companion, kind)
   }
 
-  suspend fun listProviders(req: ListProvidersRequest): ListProvidersResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/ListProviders", body = req.encodeToByteArray()))
+  suspend fun listProviders(req: ListProvidersRequest, kind: String = KIND_PROTO): ListProvidersResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/ListProviders", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return ListProvidersResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, ListProvidersResponse.Companion, kind)
   }
 
-  suspend fun listProvidersCatalog(req: ListProvidersCatalogRequest): ListProvidersCatalogResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/ListProvidersCatalog", body = req.encodeToByteArray()))
+  suspend fun listProvidersCatalog(req: ListProvidersCatalogRequest, kind: String = KIND_PROTO): ListProvidersCatalogResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/ListProvidersCatalog", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return ListProvidersCatalogResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, ListProvidersCatalogResponse.Companion, kind)
   }
 
-  suspend fun registerProvider(req: RegisterProviderRequest): RegisterProviderResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/RegisterProvider", body = req.encodeToByteArray()))
+  suspend fun registerProvider(req: RegisterProviderRequest, kind: String = KIND_PROTO): RegisterProviderResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/RegisterProvider", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return RegisterProviderResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, RegisterProviderResponse.Companion, kind)
   }
 
-  suspend fun deleteProvider(req: DeleteProviderRequest): DeleteProviderResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/DeleteProvider", body = req.encodeToByteArray()))
+  suspend fun deleteProvider(req: DeleteProviderRequest, kind: String = KIND_PROTO): DeleteProviderResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/DeleteProvider", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return DeleteProviderResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, DeleteProviderResponse.Companion, kind)
   }
 
-  suspend fun testProvider(req: TestProviderRequest): TestProviderResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/TestProvider", body = req.encodeToByteArray()))
+  suspend fun testProvider(req: TestProviderRequest, kind: String = KIND_PROTO): TestProviderResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/TestProvider", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return TestProviderResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, TestProviderResponse.Companion, kind)
   }
 
-  suspend fun listModels(req: ListModelsRequest): ListModelsResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/ListModels", body = req.encodeToByteArray()))
+  suspend fun listModels(req: ListModelsRequest, kind: String = KIND_PROTO): ListModelsResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/ListModels", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return ListModelsResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, ListModelsResponse.Companion, kind)
   }
 
-  suspend fun listPresets(req: ListPresetsRequest): ListPresetsResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/ListPresets", body = req.encodeToByteArray()))
+  suspend fun listPresets(req: ListPresetsRequest, kind: String = KIND_PROTO): ListPresetsResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/ListPresets", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return ListPresetsResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, ListPresetsResponse.Companion, kind)
   }
 
-  suspend fun upsertPreset(req: UpsertPresetRequest): UpsertPresetResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/UpsertPreset", body = req.encodeToByteArray()))
+  suspend fun upsertPreset(req: UpsertPresetRequest, kind: String = KIND_PROTO): UpsertPresetResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/UpsertPreset", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return UpsertPresetResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, UpsertPresetResponse.Companion, kind)
   }
 
-  suspend fun deletePreset(req: DeletePresetRequest): DeletePresetResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/DeletePreset", body = req.encodeToByteArray()))
+  suspend fun deletePreset(req: DeletePresetRequest, kind: String = KIND_PROTO): DeletePresetResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/DeletePreset", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return DeletePresetResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, DeletePresetResponse.Companion, kind)
   }
 
-  suspend fun previewPreset(req: PreviewPresetRequest): PreviewPresetResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/PreviewPreset", body = req.encodeToByteArray()))
+  suspend fun previewPreset(req: PreviewPresetRequest, kind: String = KIND_PROTO): PreviewPresetResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/PreviewPreset", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return PreviewPresetResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, PreviewPresetResponse.Companion, kind)
   }
 
-  suspend fun getConfig(req: GetConfigRequest): GetConfigResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/GetConfig", body = req.encodeToByteArray()))
+  suspend fun getConfig(req: GetConfigRequest, kind: String = KIND_PROTO): GetConfigResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/GetConfig", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return GetConfigResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, GetConfigResponse.Companion, kind)
   }
 
-  suspend fun setConfig(req: SetConfigRequest): SetConfigResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/SetConfig", body = req.encodeToByteArray()))
+  suspend fun setConfig(req: SetConfigRequest, kind: String = KIND_PROTO): SetConfigResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/SetConfig", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return SetConfigResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, SetConfigResponse.Companion, kind)
   }
 
-  suspend fun listTools(req: ListToolsRequest): ListToolsResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/ListTools", body = req.encodeToByteArray()))
+  suspend fun listTools(req: ListToolsRequest, kind: String = KIND_PROTO): ListToolsResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/ListTools", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return ListToolsResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, ListToolsResponse.Companion, kind)
   }
 
-  suspend fun getToolConfig(req: GetToolConfigRequest): GetToolConfigResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/GetToolConfig", body = req.encodeToByteArray()))
+  suspend fun getToolConfig(req: GetToolConfigRequest, kind: String = KIND_PROTO): GetToolConfigResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/GetToolConfig", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return GetToolConfigResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, GetToolConfigResponse.Companion, kind)
   }
 
-  suspend fun setToolConfig(req: SetToolConfigRequest): SetToolConfigResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/SetToolConfig", body = req.encodeToByteArray()))
+  suspend fun setToolConfig(req: SetToolConfigRequest, kind: String = KIND_PROTO): SetToolConfigResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/SetToolConfig", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return SetToolConfigResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, SetToolConfigResponse.Companion, kind)
   }
 
-  suspend fun setExtensionConfig(req: SetExtensionConfigRequest): SetExtensionConfigResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/SetExtensionConfig", body = req.encodeToByteArray()))
+  suspend fun setExtensionConfig(req: SetExtensionConfigRequest, kind: String = KIND_PROTO): SetExtensionConfigResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/SetExtensionConfig", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return SetExtensionConfigResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, SetExtensionConfigResponse.Companion, kind)
   }
 
-  suspend fun uploadFile(req: UploadFileRequest): UploadFileResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/UploadFile", body = req.encodeToByteArray()))
+  suspend fun uploadFile(req: UploadFileRequest, kind: String = KIND_PROTO): UploadFileResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/UploadFile", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return UploadFileResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, UploadFileResponse.Companion, kind)
   }
 
-  suspend fun ingestFile(req: IngestFileRequest): IngestFileResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/IngestFile", body = req.encodeToByteArray()))
+  suspend fun ingestFile(req: IngestFileRequest, kind: String = KIND_PROTO): IngestFileResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/IngestFile", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return IngestFileResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, IngestFileResponse.Companion, kind)
   }
 
-  suspend fun getFile(req: GetFileRequest): GetFileResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/GetFile", body = req.encodeToByteArray()))
+  suspend fun getFile(req: GetFileRequest, kind: String = KIND_PROTO): GetFileResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/GetFile", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return GetFileResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, GetFileResponse.Companion, kind)
   }
 
-  suspend fun getFileMeta(req: GetFileMetaRequest): GetFileMetaResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/GetFileMeta", body = req.encodeToByteArray()))
+  suspend fun getFileMeta(req: GetFileMetaRequest, kind: String = KIND_PROTO): GetFileMetaResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/GetFileMeta", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return GetFileMetaResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, GetFileMetaResponse.Companion, kind)
   }
 
-  suspend fun getAgentConfig(req: GetAgentConfigRequest): GetAgentConfigResponse {
-    val res = t.send(Request(url = "/agent.v1.AgentService/GetAgentConfig", body = req.encodeToByteArray()))
+  suspend fun getAgentConfig(req: GetAgentConfigRequest, kind: String = KIND_PROTO): GetAgentConfigResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/GetAgentConfig", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return GetAgentConfigResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, GetAgentConfigResponse.Companion, kind)
   }
 
 }

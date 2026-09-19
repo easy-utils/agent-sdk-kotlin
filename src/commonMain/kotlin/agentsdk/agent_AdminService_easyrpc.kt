@@ -10,60 +10,68 @@ import kotlinx.coroutines.flow.flow
 
 class AdminServiceClient(private val t: Transport) {
   var lastTrailers: Map<String, List<String>> = emptyMap()
-  suspend fun listTenants(req: ListTenantsRequest): ListTenantsResponse {
-    val res = t.send(Request(url = "/agent.v1.AdminService/ListTenants", body = req.encodeToByteArray()))
+  suspend fun listTenants(req: ListTenantsRequest, kind: String = KIND_PROTO): ListTenantsResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AdminService/ListTenants", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return ListTenantsResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, ListTenantsResponse.Companion, kind)
   }
 
-  suspend fun createTenant(req: CreateTenantRequest): CreateTenantResponse {
-    val res = t.send(Request(url = "/agent.v1.AdminService/CreateTenant", body = req.encodeToByteArray()))
+  suspend fun createTenant(req: CreateTenantRequest, kind: String = KIND_PROTO): CreateTenantResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AdminService/CreateTenant", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return CreateTenantResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, CreateTenantResponse.Companion, kind)
   }
 
-  suspend fun updateTenant(req: UpdateTenantRequest): UpdateTenantResponse {
-    val res = t.send(Request(url = "/agent.v1.AdminService/UpdateTenant", body = req.encodeToByteArray()))
+  suspend fun updateTenant(req: UpdateTenantRequest, kind: String = KIND_PROTO): UpdateTenantResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AdminService/UpdateTenant", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return UpdateTenantResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, UpdateTenantResponse.Companion, kind)
   }
 
-  suspend fun deleteTenant(req: DeleteTenantRequest): DeleteTenantResponse {
-    val res = t.send(Request(url = "/agent.v1.AdminService/DeleteTenant", body = req.encodeToByteArray()))
+  suspend fun deleteTenant(req: DeleteTenantRequest, kind: String = KIND_PROTO): DeleteTenantResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AdminService/DeleteTenant", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return DeleteTenantResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, DeleteTenantResponse.Companion, kind)
   }
 
-  suspend fun issueTenantToken(req: IssueTenantTokenRequest): IssueTenantTokenResponse {
-    val res = t.send(Request(url = "/agent.v1.AdminService/IssueTenantToken", body = req.encodeToByteArray()))
+  suspend fun issueTenantToken(req: IssueTenantTokenRequest, kind: String = KIND_PROTO): IssueTenantTokenResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AdminService/IssueTenantToken", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return IssueTenantTokenResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, IssueTenantTokenResponse.Companion, kind)
   }
 
-  suspend fun listTenantTokens(req: ListTenantTokensRequest): ListTenantTokensResponse {
-    val res = t.send(Request(url = "/agent.v1.AdminService/ListTenantTokens", body = req.encodeToByteArray()))
+  suspend fun listTenantTokens(req: ListTenantTokensRequest, kind: String = KIND_PROTO): ListTenantTokensResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AdminService/ListTenantTokens", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return ListTenantTokensResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, ListTenantTokensResponse.Companion, kind)
   }
 
-  suspend fun revokeTenantToken(req: RevokeTenantTokenRequest): RevokeTenantTokenResponse {
-    val res = t.send(Request(url = "/agent.v1.AdminService/RevokeTenantToken", body = req.encodeToByteArray()))
+  suspend fun revokeTenantToken(req: RevokeTenantTokenRequest, kind: String = KIND_PROTO): RevokeTenantTokenResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AdminService/RevokeTenantToken", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return RevokeTenantTokenResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, RevokeTenantTokenResponse.Companion, kind)
   }
 
-  suspend fun rotateTenantToken(req: RotateTenantTokenRequest): RotateTenantTokenResponse {
-    val res = t.send(Request(url = "/agent.v1.AdminService/RotateTenantToken", body = req.encodeToByteArray()))
+  suspend fun rotateTenantToken(req: RotateTenantTokenRequest, kind: String = KIND_PROTO): RotateTenantTokenResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AdminService/RotateTenantToken", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
     res.error?.let{ throw it }
     lastTrailers = res.trailers
-    return RotateTenantTokenResponse.decodeFromByteArray(res.body)
+    return decodeMsg(res.body, RotateTenantTokenResponse.Companion, kind)
   }
 
 }
