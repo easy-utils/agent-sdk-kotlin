@@ -6,8 +6,8 @@ plugins {
     `maven-publish`
 }
 
-group = "agentsdk"
-version = "0.17.0"
+group = "io.github.easy-utils"
+version = "0.18.0"
 
 repositories {
     mavenCentral()
