@@ -21,15 +21,19 @@ val sessions = agent.client().listSessions(ListSessionsRequest())
 
 ## Regenerate
 
-Messages come from `agent-proto/agent/v1/agent.proto` (source of truth):
+Messages come from the upstream proto `agent-proto/proto/agent/v1/agent.proto`
+(source of truth: `github.com/abcp-sdk/agent-proto`):
 
 ```bash
-protoc -I ../agent-proto \
+mkdir -p /tmp/agent-proto && cd /tmp/agent-proto \
+  && curl -sSL https://raw.githubusercontent.com/abcp-sdk/agent-proto/main/proto/agent/v1/agent.proto \
+       -o agent.proto
+protoc -I . \
   --plugin=protoc-gen-pbandk=/tmp/opencode/bin/protoc-gen-pbandk \
-  --pbandk_out=src/commonMain/kotlin --proto_path=... agent/v1/agent.proto
-EASYRPC_KT_PKG=agentsdk protoc -I ../agent-proto \
+  --pbandk_out=src/commonMain/kotlin agent.proto
+EASYRPC_KT_PKG=agentsdk protoc -I . \
   --plugin=protoc-gen-easyrpc-kotlin=../easy-rpc-kotlin/tool/gen.py \
-  --easyrpc-kotlin_out=src/commonMain/kotlin agent/v1/agent.proto
+  --easyrpc-kotlin_out=src/commonMain/kotlin agent.proto
 ```
 
 ## Consumed from GitHub Packages
