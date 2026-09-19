@@ -32,12 +32,19 @@ EASYRPC_KT_PKG=agentsdk protoc -I ../agent-proto \
   --easyrpc-kotlin_out=src/commonMain/kotlin agent/v1/agent.proto
 ```
 
-## Consumed as a composite build
+## Consumed from GitHub Packages
 
 ```kotlin
-includeBuild("../agent-sdk-kotlin") {
-    dependencySubstitution {
-        substitute(module("io.github.easy-utils:agent-sdk-kotlin")).using(project(":"))
+repositories {
+    maven {
+        url = uri("https://maven.pkg.github.com/easy-utils/agent-sdk-kotlin")
+        credentials {
+            username = System.getenv("GITHUB_ACTOR")
+            password = System.getenv("GITHUB_TOKEN")
+        }
     }
+}
+dependencies {
+    implementation("io.github.easy-utils:agent-sdk-kotlin:0.18.0")
 }
 ```
