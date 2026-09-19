@@ -311,6 +311,13 @@ class AgentServiceClient(private val t: Transport) {
     return decodeMsg(res.body, GetFileMetaResponse.Companion, kind)
   }
 
+  fun getFileStream(req: GetFileRequest, kind: String = KIND_PROTO): Flow<FileChunk> = flow {
+    val ct = contentTypeFor(true, kind)
+    val st = t.openStream(Request(url = "/agent.v1.AgentService/GetFileStream", headers = mapOf("content-type" to listOf(ct)), body = frame(encodeMsg(req, kind))))
+    while (true) { val p = st.recv() ?: break; emit(decodeMsg(p, FileChunk.Companion, kind)) }
+    st.lastError()?.let { throw it }
+  }
+
   suspend fun getAgentConfig(req: GetAgentConfigRequest, kind: String = KIND_PROTO): GetAgentConfigResponse {
     val ct = contentTypeFor(false, kind)
     val res = t.send(Request(url = "/agent.v1.AgentService/GetAgentConfig", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))

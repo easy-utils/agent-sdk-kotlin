@@ -1404,7 +1404,6 @@ public data class WatchSessionsResponse(
 public data class FileRef(
     val code: String = "",
     val name: String = "",
-    val mime: String = "",
     val size: Int = 0,
     override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
 ) : pbandk.Message {
@@ -1419,7 +1418,7 @@ public data class FileRef(
             fullName = "agent.v1.FileRef",
             messageClass = agent.v1.FileRef::class,
             messageCompanion = this,
-            fields = buildList(4) {
+            fields = buildList(3) {
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
@@ -1438,16 +1437,6 @@ public data class FileRef(
                         type = pbandk.FieldDescriptor.Type.Primitive.String(),
                         jsonName = "name",
                         value = agent.v1.FileRef::name
-                    )
-                )
-                add(
-                    pbandk.FieldDescriptor(
-                        messageDescriptor = this@Companion::descriptor,
-                        name = "mime",
-                        number = 3,
-                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
-                        jsonName = "mime",
-                        value = agent.v1.FileRef::mime
                     )
                 )
                 add(
@@ -4097,6 +4086,7 @@ public data class UploadFileRequest(
 public data class UploadFileResponse(
     val ok: Boolean = false,
     val code: String = "",
+    val mime: String = "",
     override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
 ) : pbandk.Message {
     override operator fun plus(other: pbandk.Message?): agent.v1.UploadFileResponse = protoMergeImpl(other)
@@ -4110,7 +4100,7 @@ public data class UploadFileResponse(
             fullName = "agent.v1.UploadFileResponse",
             messageClass = agent.v1.UploadFileResponse::class,
             messageCompanion = this,
-            fields = buildList(2) {
+            fields = buildList(3) {
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
@@ -4131,6 +4121,16 @@ public data class UploadFileResponse(
                         value = agent.v1.UploadFileResponse::code
                     )
                 )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "mime",
+                        number = 3,
+                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
+                        jsonName = "mime",
+                        value = agent.v1.UploadFileResponse::mime
+                    )
+                )
             }
         )
     }
@@ -4141,7 +4141,6 @@ public data class IngestFileRequest(
     val code: String = "",
     val data: pbandk.ByteArr = pbandk.ByteArr.empty,
     val name: String = "",
-    val mime: String = "",
     override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
 ) : pbandk.Message {
     override operator fun plus(other: pbandk.Message?): agent.v1.IngestFileRequest = protoMergeImpl(other)
@@ -4155,7 +4154,7 @@ public data class IngestFileRequest(
             fullName = "agent.v1.IngestFileRequest",
             messageClass = agent.v1.IngestFileRequest::class,
             messageCompanion = this,
-            fields = buildList(4) {
+            fields = buildList(3) {
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
@@ -4186,16 +4185,6 @@ public data class IngestFileRequest(
                         value = agent.v1.IngestFileRequest::name
                     )
                 )
-                add(
-                    pbandk.FieldDescriptor(
-                        messageDescriptor = this@Companion::descriptor,
-                        name = "mime",
-                        number = 4,
-                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
-                        jsonName = "mime",
-                        value = agent.v1.IngestFileRequest::mime
-                    )
-                )
             }
         )
     }
@@ -4205,6 +4194,7 @@ public data class IngestFileRequest(
 public data class IngestFileResponse(
     val ok: Boolean = false,
     val code: String = "",
+    val mime: String = "",
     override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
 ) : pbandk.Message {
     override operator fun plus(other: pbandk.Message?): agent.v1.IngestFileResponse = protoMergeImpl(other)
@@ -4218,7 +4208,7 @@ public data class IngestFileResponse(
             fullName = "agent.v1.IngestFileResponse",
             messageClass = agent.v1.IngestFileResponse::class,
             messageCompanion = this,
-            fields = buildList(2) {
+            fields = buildList(3) {
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
@@ -4237,6 +4227,16 @@ public data class IngestFileResponse(
                         type = pbandk.FieldDescriptor.Type.Primitive.String(),
                         jsonName = "code",
                         value = agent.v1.IngestFileResponse::code
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "mime",
+                        number = 3,
+                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
+                        jsonName = "mime",
+                        value = agent.v1.IngestFileResponse::mime
                     )
                 )
             }
@@ -4367,6 +4367,11 @@ public data class GetFileMetaResponse(
     val name: String = "",
     val mime: String = "",
     val size: Int = 0,
+    val width: Int? = null,
+    val height: Int? = null,
+    val durationMs: Long? = null,
+    val thumbCode: String? = null,
+    val thumbhash: String? = null,
     override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
 ) : pbandk.Message {
     override operator fun plus(other: pbandk.Message?): agent.v1.GetFileMetaResponse = protoMergeImpl(other)
@@ -4380,7 +4385,7 @@ public data class GetFileMetaResponse(
             fullName = "agent.v1.GetFileMetaResponse",
             messageClass = agent.v1.GetFileMetaResponse::class,
             messageCompanion = this,
-            fields = buildList(3) {
+            fields = buildList(8) {
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
@@ -4409,6 +4414,121 @@ public data class GetFileMetaResponse(
                         type = pbandk.FieldDescriptor.Type.Primitive.Int32(),
                         jsonName = "size",
                         value = agent.v1.GetFileMetaResponse::size
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "width",
+                        number = 4,
+                        type = pbandk.FieldDescriptor.Type.Primitive.Int32(hasPresence = true),
+                        jsonName = "width",
+                        value = agent.v1.GetFileMetaResponse::width
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "height",
+                        number = 5,
+                        type = pbandk.FieldDescriptor.Type.Primitive.Int32(hasPresence = true),
+                        jsonName = "height",
+                        value = agent.v1.GetFileMetaResponse::height
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "duration_ms",
+                        number = 6,
+                        type = pbandk.FieldDescriptor.Type.Primitive.Int64(hasPresence = true),
+                        jsonName = "durationMs",
+                        value = agent.v1.GetFileMetaResponse::durationMs
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "thumb_code",
+                        number = 7,
+                        type = pbandk.FieldDescriptor.Type.Primitive.String(hasPresence = true),
+                        jsonName = "thumbCode",
+                        value = agent.v1.GetFileMetaResponse::thumbCode
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "thumbhash",
+                        number = 8,
+                        type = pbandk.FieldDescriptor.Type.Primitive.String(hasPresence = true),
+                        jsonName = "thumbhash",
+                        value = agent.v1.GetFileMetaResponse::thumbhash
+                    )
+                )
+            }
+        )
+    }
+}
+
+@pbandk.Export
+public data class FileChunk(
+    val data: pbandk.ByteArr = pbandk.ByteArr.empty,
+    val offset: Long = 0L,
+    val total: Long = 0L,
+    val last: Boolean = false,
+    override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
+) : pbandk.Message {
+    override operator fun plus(other: pbandk.Message?): agent.v1.FileChunk = protoMergeImpl(other)
+    override val descriptor: pbandk.MessageDescriptor<agent.v1.FileChunk> get() = Companion.descriptor
+    override val protoSize: Int by lazy { super.protoSize }
+    public companion object : pbandk.Message.Companion<agent.v1.FileChunk> {
+        public val defaultInstance: agent.v1.FileChunk by lazy { agent.v1.FileChunk() }
+        override fun decodeWith(u: pbandk.MessageDecoder): agent.v1.FileChunk = agent.v1.FileChunk.decodeWithImpl(u)
+
+        override val descriptor: pbandk.MessageDescriptor<agent.v1.FileChunk> = pbandk.MessageDescriptor(
+            fullName = "agent.v1.FileChunk",
+            messageClass = agent.v1.FileChunk::class,
+            messageCompanion = this,
+            fields = buildList(4) {
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "data",
+                        number = 1,
+                        type = pbandk.FieldDescriptor.Type.Primitive.Bytes(),
+                        jsonName = "data",
+                        value = agent.v1.FileChunk::data
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "offset",
+                        number = 2,
+                        type = pbandk.FieldDescriptor.Type.Primitive.UInt64(),
+                        jsonName = "offset",
+                        value = agent.v1.FileChunk::offset
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "total",
+                        number = 3,
+                        type = pbandk.FieldDescriptor.Type.Primitive.UInt64(),
+                        jsonName = "total",
+                        value = agent.v1.FileChunk::total
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "last",
+                        number = 4,
+                        type = pbandk.FieldDescriptor.Type.Primitive.Bool(),
+                        jsonName = "last",
+                        value = agent.v1.FileChunk::last
                     )
                 )
             }
@@ -5877,19 +5997,17 @@ private fun FileRef.protoMergeImpl(plus: pbandk.Message?): FileRef = (plus as? F
 private fun FileRef.Companion.decodeWithImpl(u: pbandk.MessageDecoder): FileRef {
     var code = ""
     var name = ""
-    var mime = ""
     var size = 0
 
     val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
         when (_fieldNumber) {
             1 -> code = _fieldValue as String
             2 -> name = _fieldValue as String
-            3 -> mime = _fieldValue as String
             4 -> size = _fieldValue as Int
         }
     }
 
-    return FileRef(code, name, mime, size, unknownFields)
+    return FileRef(code, name, size, unknownFields)
 }
 
 @pbandk.Export
@@ -7536,15 +7654,17 @@ private fun UploadFileResponse.protoMergeImpl(plus: pbandk.Message?): UploadFile
 private fun UploadFileResponse.Companion.decodeWithImpl(u: pbandk.MessageDecoder): UploadFileResponse {
     var ok = false
     var code = ""
+    var mime = ""
 
     val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
         when (_fieldNumber) {
             1 -> ok = _fieldValue as Boolean
             2 -> code = _fieldValue as String
+            3 -> mime = _fieldValue as String
         }
     }
 
-    return UploadFileResponse(ok, code, unknownFields)
+    return UploadFileResponse(ok, code, mime, unknownFields)
 }
 
 @pbandk.Export
@@ -7562,18 +7682,16 @@ private fun IngestFileRequest.Companion.decodeWithImpl(u: pbandk.MessageDecoder)
     var code = ""
     var data: pbandk.ByteArr = pbandk.ByteArr.empty
     var name = ""
-    var mime = ""
 
     val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
         when (_fieldNumber) {
             1 -> code = _fieldValue as String
             2 -> data = _fieldValue as pbandk.ByteArr
             3 -> name = _fieldValue as String
-            4 -> mime = _fieldValue as String
         }
     }
 
-    return IngestFileRequest(code, data, name, mime, unknownFields)
+    return IngestFileRequest(code, data, name, unknownFields)
 }
 
 @pbandk.Export
@@ -7590,15 +7708,17 @@ private fun IngestFileResponse.protoMergeImpl(plus: pbandk.Message?): IngestFile
 private fun IngestFileResponse.Companion.decodeWithImpl(u: pbandk.MessageDecoder): IngestFileResponse {
     var ok = false
     var code = ""
+    var mime = ""
 
     val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
         when (_fieldNumber) {
             1 -> ok = _fieldValue as Boolean
             2 -> code = _fieldValue as String
+            3 -> mime = _fieldValue as String
         }
     }
 
-    return IngestFileResponse(ok, code, unknownFields)
+    return IngestFileResponse(ok, code, mime, unknownFields)
 }
 
 @pbandk.Export
@@ -7680,6 +7800,11 @@ public fun GetFileMetaResponse?.orDefault(): agent.v1.GetFileMetaResponse = this
 
 private fun GetFileMetaResponse.protoMergeImpl(plus: pbandk.Message?): GetFileMetaResponse = (plus as? GetFileMetaResponse)?.let {
     it.copy(
+        width = plus.width ?: width,
+        height = plus.height ?: height,
+        durationMs = plus.durationMs ?: durationMs,
+        thumbCode = plus.thumbCode ?: thumbCode,
+        thumbhash = plus.thumbhash ?: thumbhash,
         unknownFields = unknownFields + plus.unknownFields
     )
 } ?: this
@@ -7689,16 +7814,56 @@ private fun GetFileMetaResponse.Companion.decodeWithImpl(u: pbandk.MessageDecode
     var name = ""
     var mime = ""
     var size = 0
+    var width: Int? = null
+    var height: Int? = null
+    var durationMs: Long? = null
+    var thumbCode: String? = null
+    var thumbhash: String? = null
 
     val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
         when (_fieldNumber) {
             1 -> name = _fieldValue as String
             2 -> mime = _fieldValue as String
             3 -> size = _fieldValue as Int
+            4 -> width = _fieldValue as Int
+            5 -> height = _fieldValue as Int
+            6 -> durationMs = _fieldValue as Long
+            7 -> thumbCode = _fieldValue as String
+            8 -> thumbhash = _fieldValue as String
         }
     }
 
-    return GetFileMetaResponse(name, mime, size, unknownFields)
+    return GetFileMetaResponse(name, mime, size, width,
+        height, durationMs, thumbCode, thumbhash, unknownFields)
+}
+
+@pbandk.Export
+@pbandk.JsName("orDefaultForFileChunk")
+public fun FileChunk?.orDefault(): agent.v1.FileChunk = this ?: FileChunk.defaultInstance
+
+private fun FileChunk.protoMergeImpl(plus: pbandk.Message?): FileChunk = (plus as? FileChunk)?.let {
+    it.copy(
+        unknownFields = unknownFields + plus.unknownFields
+    )
+} ?: this
+
+@Suppress("UNCHECKED_CAST")
+private fun FileChunk.Companion.decodeWithImpl(u: pbandk.MessageDecoder): FileChunk {
+    var data: pbandk.ByteArr = pbandk.ByteArr.empty
+    var offset = 0L
+    var total = 0L
+    var last = false
+
+    val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
+        when (_fieldNumber) {
+            1 -> data = _fieldValue as pbandk.ByteArr
+            2 -> offset = _fieldValue as Long
+            3 -> total = _fieldValue as Long
+            4 -> last = _fieldValue as Boolean
+        }
+    }
+
+    return FileChunk(data, offset, total, last, unknownFields)
 }
 
 @pbandk.Export
