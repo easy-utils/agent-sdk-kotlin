@@ -18,6 +18,14 @@ class AgentServiceClient(private val t: Transport) {
     return decodeMsg(res.body, HealthResponse.Companion, kind)
   }
 
+  suspend fun getIdentity(req: GetIdentityRequest, kind: String = KIND_PROTO): GetIdentityResponse {
+    val ct = contentTypeFor(false, kind)
+    val res = t.send(Request(url = "/agent.v1.AgentService/GetIdentity", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))
+    res.error?.let{ throw it }
+    lastTrailers = res.trailers
+    return decodeMsg(res.body, GetIdentityResponse.Companion, kind)
+  }
+
   suspend fun listSessions(req: ListSessionsRequest, kind: String = KIND_PROTO): ListSessionsResponse {
     val ct = contentTypeFor(false, kind)
     val res = t.send(Request(url = "/agent.v1.AgentService/ListSessions", headers = mapOf("content-type" to listOf(ct)), body = encodeMsg(req, kind)))

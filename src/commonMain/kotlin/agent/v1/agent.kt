@@ -1443,7 +1443,7 @@ public data class FileRef(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
                         name = "size",
-                        number = 4,
+                        number = 3,
                         type = pbandk.FieldDescriptor.Type.Primitive.Int32(),
                         jsonName = "size",
                         value = agent.v1.FileRef::size
@@ -2448,11 +2448,8 @@ public data class UpdateSettingsRequest(
     val id: String = "",
     val model: String = "",
     val preset: String = "",
-    val systemPrompt: String = "",
     val locale: String = "",
     val variant: String = "",
-    val maxTurns: Int? = null,
-    val group: String? = null,
     override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
 ) : pbandk.Message {
     override operator fun plus(other: pbandk.Message?): agent.v1.UpdateSettingsRequest = protoMergeImpl(other)
@@ -2466,7 +2463,7 @@ public data class UpdateSettingsRequest(
             fullName = "agent.v1.UpdateSettingsRequest",
             messageClass = agent.v1.UpdateSettingsRequest::class,
             messageCompanion = this,
-            fields = buildList(8) {
+            fields = buildList(5) {
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
@@ -2500,28 +2497,8 @@ public data class UpdateSettingsRequest(
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
-                        name = "max_turns",
-                        number = 4,
-                        type = pbandk.FieldDescriptor.Type.Primitive.Int32(hasPresence = true),
-                        jsonName = "maxTurns",
-                        value = agent.v1.UpdateSettingsRequest::maxTurns
-                    )
-                )
-                add(
-                    pbandk.FieldDescriptor(
-                        messageDescriptor = this@Companion::descriptor,
-                        name = "system_prompt",
-                        number = 5,
-                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
-                        jsonName = "systemPrompt",
-                        value = agent.v1.UpdateSettingsRequest::systemPrompt
-                    )
-                )
-                add(
-                    pbandk.FieldDescriptor(
-                        messageDescriptor = this@Companion::descriptor,
                         name = "locale",
-                        number = 6,
+                        number = 4,
                         type = pbandk.FieldDescriptor.Type.Primitive.String(),
                         jsonName = "locale",
                         value = agent.v1.UpdateSettingsRequest::locale
@@ -2531,20 +2508,10 @@ public data class UpdateSettingsRequest(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
                         name = "variant",
-                        number = 7,
+                        number = 5,
                         type = pbandk.FieldDescriptor.Type.Primitive.String(),
                         jsonName = "variant",
                         value = agent.v1.UpdateSettingsRequest::variant
-                    )
-                )
-                add(
-                    pbandk.FieldDescriptor(
-                        messageDescriptor = this@Companion::descriptor,
-                        name = "group",
-                        number = 8,
-                        type = pbandk.FieldDescriptor.Type.Primitive.String(hasPresence = true),
-                        jsonName = "group",
-                        value = agent.v1.UpdateSettingsRequest::group
                     )
                 )
             }
@@ -4654,6 +4621,81 @@ public data class HealthResponse(
 }
 
 @pbandk.Export
+public data class GetIdentityRequest(
+    override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
+) : pbandk.Message {
+    override operator fun plus(other: pbandk.Message?): agent.v1.GetIdentityRequest = protoMergeImpl(other)
+    override val descriptor: pbandk.MessageDescriptor<agent.v1.GetIdentityRequest> get() = Companion.descriptor
+    override val protoSize: Int by lazy { super.protoSize }
+    public companion object : pbandk.Message.Companion<agent.v1.GetIdentityRequest> {
+        public val defaultInstance: agent.v1.GetIdentityRequest by lazy { agent.v1.GetIdentityRequest() }
+        override fun decodeWith(u: pbandk.MessageDecoder): agent.v1.GetIdentityRequest = agent.v1.GetIdentityRequest.decodeWithImpl(u)
+
+        override val descriptor: pbandk.MessageDescriptor<agent.v1.GetIdentityRequest> = pbandk.MessageDescriptor(
+            fullName = "agent.v1.GetIdentityRequest",
+            messageClass = agent.v1.GetIdentityRequest::class,
+            messageCompanion = this,
+            fields = buildList(0) {
+            }
+        )
+    }
+}
+
+@pbandk.Export
+public data class GetIdentityResponse(
+    val tenant: String = "",
+    val tenantName: String = "",
+    val role: String = "",
+    override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
+) : pbandk.Message {
+    override operator fun plus(other: pbandk.Message?): agent.v1.GetIdentityResponse = protoMergeImpl(other)
+    override val descriptor: pbandk.MessageDescriptor<agent.v1.GetIdentityResponse> get() = Companion.descriptor
+    override val protoSize: Int by lazy { super.protoSize }
+    public companion object : pbandk.Message.Companion<agent.v1.GetIdentityResponse> {
+        public val defaultInstance: agent.v1.GetIdentityResponse by lazy { agent.v1.GetIdentityResponse() }
+        override fun decodeWith(u: pbandk.MessageDecoder): agent.v1.GetIdentityResponse = agent.v1.GetIdentityResponse.decodeWithImpl(u)
+
+        override val descriptor: pbandk.MessageDescriptor<agent.v1.GetIdentityResponse> = pbandk.MessageDescriptor(
+            fullName = "agent.v1.GetIdentityResponse",
+            messageClass = agent.v1.GetIdentityResponse::class,
+            messageCompanion = this,
+            fields = buildList(3) {
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "tenant",
+                        number = 1,
+                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
+                        jsonName = "tenant",
+                        value = agent.v1.GetIdentityResponse::tenant
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "tenant_name",
+                        number = 2,
+                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
+                        jsonName = "tenantName",
+                        value = agent.v1.GetIdentityResponse::tenantName
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "role",
+                        number = 3,
+                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
+                        jsonName = "role",
+                        value = agent.v1.GetIdentityResponse::role
+                    )
+                )
+            }
+        )
+    }
+}
+
+@pbandk.Export
 public data class Tenant(
     val id: String = "",
     val name: String = "",
@@ -6003,7 +6045,7 @@ private fun FileRef.Companion.decodeWithImpl(u: pbandk.MessageDecoder): FileRef 
         when (_fieldNumber) {
             1 -> code = _fieldValue as String
             2 -> name = _fieldValue as String
-            4 -> size = _fieldValue as Int
+            3 -> size = _fieldValue as Int
         }
     }
 
@@ -6599,8 +6641,6 @@ public fun UpdateSettingsRequest?.orDefault(): agent.v1.UpdateSettingsRequest = 
 
 private fun UpdateSettingsRequest.protoMergeImpl(plus: pbandk.Message?): UpdateSettingsRequest = (plus as? UpdateSettingsRequest)?.let {
     it.copy(
-        maxTurns = plus.maxTurns ?: maxTurns,
-        group = plus.group ?: group,
         unknownFields = unknownFields + plus.unknownFields
     )
 } ?: this
@@ -6610,27 +6650,21 @@ private fun UpdateSettingsRequest.Companion.decodeWithImpl(u: pbandk.MessageDeco
     var id = ""
     var model = ""
     var preset = ""
-    var systemPrompt = ""
     var locale = ""
     var variant = ""
-    var maxTurns: Int? = null
-    var group: String? = null
 
     val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
         when (_fieldNumber) {
             1 -> id = _fieldValue as String
             2 -> model = _fieldValue as String
             3 -> preset = _fieldValue as String
-            4 -> maxTurns = _fieldValue as Int
-            5 -> systemPrompt = _fieldValue as String
-            6 -> locale = _fieldValue as String
-            7 -> variant = _fieldValue as String
-            8 -> group = _fieldValue as String
+            4 -> locale = _fieldValue as String
+            5 -> variant = _fieldValue as String
         }
     }
 
-    return UpdateSettingsRequest(id, model, preset, systemPrompt,
-        locale, variant, maxTurns, group, unknownFields)
+    return UpdateSettingsRequest(id, model, preset, locale,
+        variant, unknownFields)
 }
 
 @pbandk.Export
@@ -7949,6 +7983,51 @@ private fun HealthResponse.Companion.decodeWithImpl(u: pbandk.MessageDecoder): H
     }
 
     return HealthResponse(ok, name, unknownFields)
+}
+
+@pbandk.Export
+@pbandk.JsName("orDefaultForGetIdentityRequest")
+public fun GetIdentityRequest?.orDefault(): agent.v1.GetIdentityRequest = this ?: GetIdentityRequest.defaultInstance
+
+private fun GetIdentityRequest.protoMergeImpl(plus: pbandk.Message?): GetIdentityRequest = (plus as? GetIdentityRequest)?.let {
+    it.copy(
+        unknownFields = unknownFields + plus.unknownFields
+    )
+} ?: this
+
+@Suppress("UNCHECKED_CAST")
+private fun GetIdentityRequest.Companion.decodeWithImpl(u: pbandk.MessageDecoder): GetIdentityRequest {
+
+    val unknownFields = u.readMessage(this) { _, _ -> }
+
+    return GetIdentityRequest(unknownFields)
+}
+
+@pbandk.Export
+@pbandk.JsName("orDefaultForGetIdentityResponse")
+public fun GetIdentityResponse?.orDefault(): agent.v1.GetIdentityResponse = this ?: GetIdentityResponse.defaultInstance
+
+private fun GetIdentityResponse.protoMergeImpl(plus: pbandk.Message?): GetIdentityResponse = (plus as? GetIdentityResponse)?.let {
+    it.copy(
+        unknownFields = unknownFields + plus.unknownFields
+    )
+} ?: this
+
+@Suppress("UNCHECKED_CAST")
+private fun GetIdentityResponse.Companion.decodeWithImpl(u: pbandk.MessageDecoder): GetIdentityResponse {
+    var tenant = ""
+    var tenantName = ""
+    var role = ""
+
+    val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
+        when (_fieldNumber) {
+            1 -> tenant = _fieldValue as String
+            2 -> tenantName = _fieldValue as String
+            3 -> role = _fieldValue as String
+        }
+    }
+
+    return GetIdentityResponse(tenant, tenantName, role, unknownFields)
 }
 
 @pbandk.Export
