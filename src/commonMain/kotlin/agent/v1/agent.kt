@@ -294,6 +294,7 @@ public data class Message(
     val prevId: String = "",
     val createdAt: String = "",
     val parts: List<agent.v1.Part> = emptyList(),
+    val source: String = "",
     override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
 ) : pbandk.Message {
     override operator fun plus(other: pbandk.Message?): agent.v1.Message = protoMergeImpl(other)
@@ -307,7 +308,7 @@ public data class Message(
             fullName = "agent.v1.Message",
             messageClass = agent.v1.Message::class,
             messageCompanion = this,
-            fields = buildList(5) {
+            fields = buildList(6) {
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
@@ -356,6 +357,16 @@ public data class Message(
                         type = pbandk.FieldDescriptor.Type.Repeated<agent.v1.Part>(valueType = pbandk.FieldDescriptor.Type.Message(messageCompanion = agent.v1.Part.Companion)),
                         jsonName = "parts",
                         value = agent.v1.Message::parts
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "source",
+                        number = 6,
+                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
+                        jsonName = "source",
+                        value = agent.v1.Message::source
                     )
                 )
             }
@@ -450,6 +461,7 @@ public data class MailboxEntry(
     val createdAt: String = "",
     val consumedAt: String = "",
     val seq: Long = 0L,
+    val source: String = "",
     override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
 ) : pbandk.Message {
     override operator fun plus(other: pbandk.Message?): agent.v1.MailboxEntry = protoMergeImpl(other)
@@ -463,7 +475,7 @@ public data class MailboxEntry(
             fullName = "agent.v1.MailboxEntry",
             messageClass = agent.v1.MailboxEntry::class,
             messageCompanion = this,
-            fields = buildList(9) {
+            fields = buildList(10) {
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
@@ -552,6 +564,16 @@ public data class MailboxEntry(
                         type = pbandk.FieldDescriptor.Type.Primitive.Int64(),
                         jsonName = "seq",
                         value = agent.v1.MailboxEntry::seq
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "source",
+                        number = 10,
+                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
+                        jsonName = "source",
+                        value = agent.v1.MailboxEntry::source
                     )
                 )
             }
@@ -2371,6 +2393,8 @@ public data class StateResponse(
 @pbandk.Export
 public data class MailboxRequest(
     val id: String = "",
+    val limit: Int = 0,
+    val before: String = "",
     override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
 ) : pbandk.Message {
     override operator fun plus(other: pbandk.Message?): agent.v1.MailboxRequest = protoMergeImpl(other)
@@ -2384,7 +2408,7 @@ public data class MailboxRequest(
             fullName = "agent.v1.MailboxRequest",
             messageClass = agent.v1.MailboxRequest::class,
             messageCompanion = this,
-            fields = buildList(1) {
+            fields = buildList(3) {
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
@@ -2393,6 +2417,26 @@ public data class MailboxRequest(
                         type = pbandk.FieldDescriptor.Type.Primitive.String(),
                         jsonName = "id",
                         value = agent.v1.MailboxRequest::id
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "limit",
+                        number = 2,
+                        type = pbandk.FieldDescriptor.Type.Primitive.Int32(),
+                        jsonName = "limit",
+                        value = agent.v1.MailboxRequest::limit
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "before",
+                        number = 3,
+                        type = pbandk.FieldDescriptor.Type.Primitive.String(),
+                        jsonName = "before",
+                        value = agent.v1.MailboxRequest::before
                     )
                 )
             }
@@ -2404,6 +2448,7 @@ public data class MailboxRequest(
 public data class MailboxResponse(
     val ok: Boolean = false,
     val mailbox: List<agent.v1.MailboxEntry> = emptyList(),
+    val hasMore: Boolean = false,
     override val unknownFields: Map<Int, pbandk.UnknownField> = emptyMap()
 ) : pbandk.Message {
     override operator fun plus(other: pbandk.Message?): agent.v1.MailboxResponse = protoMergeImpl(other)
@@ -2417,7 +2462,7 @@ public data class MailboxResponse(
             fullName = "agent.v1.MailboxResponse",
             messageClass = agent.v1.MailboxResponse::class,
             messageCompanion = this,
-            fields = buildList(2) {
+            fields = buildList(3) {
                 add(
                     pbandk.FieldDescriptor(
                         messageDescriptor = this@Companion::descriptor,
@@ -2436,6 +2481,16 @@ public data class MailboxResponse(
                         type = pbandk.FieldDescriptor.Type.Repeated<agent.v1.MailboxEntry>(valueType = pbandk.FieldDescriptor.Type.Message(messageCompanion = agent.v1.MailboxEntry.Companion)),
                         jsonName = "mailbox",
                         value = agent.v1.MailboxResponse::mailbox
+                    )
+                )
+                add(
+                    pbandk.FieldDescriptor(
+                        messageDescriptor = this@Companion::descriptor,
+                        name = "has_more",
+                        number = 3,
+                        type = pbandk.FieldDescriptor.Type.Primitive.Bool(),
+                        jsonName = "hasMore",
+                        value = agent.v1.MailboxResponse::hasMore
                     )
                 )
             }
@@ -5528,6 +5583,7 @@ private fun Message.Companion.decodeWithImpl(u: pbandk.MessageDecoder): Message 
     var prevId = ""
     var createdAt = ""
     var parts: pbandk.ListWithSize.Builder<agent.v1.Part>? = null
+    var source = ""
 
     val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
         when (_fieldNumber) {
@@ -5536,11 +5592,12 @@ private fun Message.Companion.decodeWithImpl(u: pbandk.MessageDecoder): Message 
             3 -> prevId = _fieldValue as String
             4 -> createdAt = _fieldValue as String
             5 -> parts = (parts ?: pbandk.ListWithSize.Builder()).apply { this += _fieldValue as kotlin.sequences.Sequence<agent.v1.Part> }
+            6 -> source = _fieldValue as String
         }
     }
 
     return Message(id, role, prevId, createdAt,
-        pbandk.ListWithSize.Builder.fixed(parts), unknownFields)
+        pbandk.ListWithSize.Builder.fixed(parts), source, unknownFields)
 }
 
 @pbandk.Export
@@ -5596,6 +5653,7 @@ private fun MailboxEntry.Companion.decodeWithImpl(u: pbandk.MessageDecoder): Mai
     var createdAt = ""
     var consumedAt = ""
     var seq = 0L
+    var source = ""
 
     val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
         when (_fieldNumber) {
@@ -5608,12 +5666,13 @@ private fun MailboxEntry.Companion.decodeWithImpl(u: pbandk.MessageDecoder): Mai
             7 -> createdAt = _fieldValue as String
             8 -> consumedAt = _fieldValue as String
             9 -> seq = _fieldValue as Long
+            10 -> source = _fieldValue as String
         }
     }
 
     return MailboxEntry(id, sessionName, msgType, payload,
         effectiveAt, status, createdAt, consumedAt,
-        seq, unknownFields)
+        seq, source, unknownFields)
 }
 
 @pbandk.Export
@@ -6599,14 +6658,18 @@ private fun MailboxRequest.protoMergeImpl(plus: pbandk.Message?): MailboxRequest
 @Suppress("UNCHECKED_CAST")
 private fun MailboxRequest.Companion.decodeWithImpl(u: pbandk.MessageDecoder): MailboxRequest {
     var id = ""
+    var limit = 0
+    var before = ""
 
     val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
         when (_fieldNumber) {
             1 -> id = _fieldValue as String
+            2 -> limit = _fieldValue as Int
+            3 -> before = _fieldValue as String
         }
     }
 
-    return MailboxRequest(id, unknownFields)
+    return MailboxRequest(id, limit, before, unknownFields)
 }
 
 @pbandk.Export
@@ -6624,15 +6687,17 @@ private fun MailboxResponse.protoMergeImpl(plus: pbandk.Message?): MailboxRespon
 private fun MailboxResponse.Companion.decodeWithImpl(u: pbandk.MessageDecoder): MailboxResponse {
     var ok = false
     var mailbox: pbandk.ListWithSize.Builder<agent.v1.MailboxEntry>? = null
+    var hasMore = false
 
     val unknownFields = u.readMessage(this) { _fieldNumber, _fieldValue ->
         when (_fieldNumber) {
             1 -> ok = _fieldValue as Boolean
             2 -> mailbox = (mailbox ?: pbandk.ListWithSize.Builder()).apply { this += _fieldValue as kotlin.sequences.Sequence<agent.v1.MailboxEntry> }
+            3 -> hasMore = _fieldValue as Boolean
         }
     }
 
-    return MailboxResponse(ok, pbandk.ListWithSize.Builder.fixed(mailbox), unknownFields)
+    return MailboxResponse(ok, pbandk.ListWithSize.Builder.fixed(mailbox), hasMore, unknownFields)
 }
 
 @pbandk.Export

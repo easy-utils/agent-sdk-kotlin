@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "io.github.easy-utils"
-version = "0.20.0"
+version = "0.21.0"
 
 repositories {
     mavenCentral()
